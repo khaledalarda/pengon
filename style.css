@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+.panel {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.panel1 {
+  background: #1a1a1a;
+}
+.panel2 {
+  background: #3b3b98;
+}
+.panel3 {
+  background: #f39c12;
+}
+.panel4 {
+  background: #27ae60;
+}
