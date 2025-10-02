@@ -7,12 +7,84 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
   </head>
   <body>
-    <section class="panel panel1">Scene 1: The Beginning</section>
-    <section class="panel panel2">Scene 2: The Conflict</section>
-    <section class="panel panel3">Scene 3: The Climax</section>
-    <section class="panel panel4">Scene 4: The Resolution</section>
+    <section class="scene scene1">
+      <div class="layer backdrop-layer"></div>
+      <div class="layer sun-backdrop-layer">
+        <img src="./assets/scenes/scene1/scene1.1/sun.png" alt="Sun Backdrop" />
+      </div>
+      <div class="layer background-layer">
+        <img
+          src="./assets/scenes/scene1/scene1.1/background.png"
+          alt="Background"
+        />
+      </div>
+      <div class="layer sky-lines-layer">
+        <img
+          src="./assets/scenes/scene1/scene1.1/sky_lines.png"
+          alt="Sky Lines"
+        />
+      </div>
+      <div class="layer sun-layer">
+        <img src="./assets/scenes/scene1/scene1.1/sun.png" alt="Sun" />
+      </div>
+      <div class="layer layer-1">
+        <img src="./assets/scenes/scene1/scene1.1/layer_1.png" alt="Layer 1" />
+      </div>
+      <div class="layer layer-2">
+        <img src="./assets/scenes/scene1/scene1.1/layer_2.png" alt="Layer 2" />
+      </div>
+      <div class="layer layer-4">
+        <img src="./assets/scenes/scene1/scene1.1/layer_4.png" alt="Layer 4" />
+      </div>
+      <div class="layer layer-5">
+        <img src="./assets/scenes/scene1/scene1.1/layer_5.png" alt="Layer 5" />
+      </div>
+      <div class="layer layer-6">
+        <img src="./assets/scenes/scene1/scene1.1/layer_6.png" alt="Layer 6" />
+      </div>
+      <div class="layer trees-layer">
+        <img src="./assets/scenes/scene1/scene1.1/trees.png" alt="Trees" />
+      </div>
+      <div class="layer plant-layer">
+        <img src="./assets/scenes/scene1/scene1.1/plant.png" alt="Plant" />
+      </div>
+      <div class="layer road-layer">
+        <img src="./assets/scenes/scene1/scene1.1/road.png" alt="Road" />
+      </div>
+      <div class="layer tree-layer">
+        <img src="./assets/scenes/scene1/scene1.1/tree.png" alt="Tree" />
+      </div>
+      <div class="layer wall-layer">
+        <img src="./assets/scenes/scene1/scene1.1/wall.png" alt="Wall" />
+      </div>
+      <div class="layer truck-layer">
+        <img
+          src="./assets/scenes/scene1/scene1.2/truck_no_bag.png"
+          alt="Truck No Bag"
+        />
+        <img
+          id="truckBag"
+          src="./assets/scenes/scene1/scene1.2/truck_bag.png"
+          alt="Truck With Bag"
+        />
+      </div>
+
+      <!-- Motion path for truck -->
+      <svg class="motion-path" viewBox="0 0 100 100">
+        <path
+          id="truckPath"
+          d="M-40,90.347 C-25,90.46371 10.92055,89.967 23.14955,90.351 29.73455,90.555 36.7676,91.86395 43.89955,91.753 56.35205,91.541 69.10555,84.061 80.30155,82.975 91.49655,81.85 101.57955,85.672 107.35255,82.829 115.05055,79.037 114.92755,76.735 118.56355,73.176 122.99955,68.801 132.24725,64.0024 143.50355,55.121 "
+          stroke="transparent"
+          fill="none"
+        />
+      </svg>
+    </section>
+    <section class="scene panel2">Scene 2: The Conflict</section>
+    <section class="scene panel3">Scene 3: The Climax</section>
+    <section class="scene panel4">Scene 4: The Resolution</section>
 
     <script src="script.js"></script>
   </body>

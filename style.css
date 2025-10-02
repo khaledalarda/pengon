@@ -2,22 +2,157 @@ body {
   margin: 0;
   font-family: sans-serif;
   overflow-x: hidden;
+  background: #a4b6a6;
 }
 
-.panel {
+.scene {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
   color: white;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
-.panel1 {
-  background: #1a1a1a;
+.scene1 {
+  position: relative;
+  overflow: hidden;
 }
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+/* Parallax layer initial states */
+.background-layer {
+  z-index: 1;
+}
+
+.sky-lines-layer {
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(70vh);
+}
+
+.sun-layer {
+  z-index: 3;
+  transform: translate(-50%, 60vh);
+}
+
+.sun-backdrop-layer {
+  z-index: 100;
+  transform: translate(-50%, 60vh);
+}
+
+.backdrop-layer {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background: black;
+}
+
+.layer-1 {
+  z-index: 4;
+  opacity: 0;
+  transform: translateY(50vh);
+}
+
+.layer-2 {
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(75vh);
+}
+
+.layer-4 {
+  z-index: 6;
+  opacity: 0;
+  transform: translateY(70vh);
+}
+
+.layer-5 {
+  z-index: 7;
+  opacity: 0;
+  transform: translateY(90vh);
+}
+
+.layer-6 {
+  z-index: 8;
+  opacity: 0;
+  transform: translateY(100vh);
+}
+
+.trees-layer {
+  z-index: 9;
+  opacity: 0;
+  transform: translateY(200px);
+}
+
+.plant-layer {
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(220px);
+}
+
+.road-layer {
+  z-index: 11;
+  opacity: 0;
+  transform: translateY(300px);
+}
+
+.tree-layer {
+  z-index: 12;
+  opacity: 0;
+  transform: translateY(250px);
+}
+
+.wall-layer {
+  z-index: 13;
+  opacity: 0;
+  transform: translateY(280px);
+}
+
+.truck-layer {
+  z-index: 14;
+  position: absolute;
+  left: 0%;
+}
+
+.truck-layer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scale: 0.2;
+}
+
+.motion-path {
+  position: absolute;
+  top: -27%;
+  left: -27%;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: auto;
+}
+
 .panel2 {
   background: #3b3b98;
 }
