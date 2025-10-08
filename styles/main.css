@@ -119,20 +119,14 @@ body {
   z-index: 1;
 }
 
-.sky-lines-layer {
-  z-index: 2;
-  opacity: 0;
-  transform: translateY(70vh);
-}
-
-.sun-layer {
-  z-index: 3;
-  transform: translate(-50%, 60vh);
+.layer-sun {
+  z-index: 5;
+  transform: translate(-50%, -20%);
 }
 
 .sun-backdrop-layer {
   z-index: 100;
-  transform: translate(-50%, 60vh);
+  transform: translate(-50%, -20%);
 }
 
 .backdrop-layer {
@@ -146,87 +140,96 @@ body {
   background: black;
 }
 
-.layer-1 {
-  z-index: 4;
-  opacity: 0;
-  transform: translateY(50vh);
-}
-
-.layer-2 {
-  z-index: 5;
-  opacity: 0;
-  transform: translateY(75vh);
-}
-
-.layer-4 {
-  z-index: 6;
-  opacity: 0;
-  transform: translateY(70vh);
-}
-
-.layer-5 {
-  z-index: 7;
-  opacity: 0;
-  transform: translateY(90vh);
-}
-
-.layer-6 {
-  z-index: 8;
-  opacity: 0;
-  transform: translateY(100vh);
-}
-
-.trees-layer {
-  z-index: 9;
-  opacity: 0;
-  transform: translateY(200px);
-}
-
-.plant-layer {
+.layer-bank {
   z-index: 10;
   opacity: 0;
-  transform: translateY(220px);
-}
-
-.road-layer {
-  z-index: 11;
-  opacity: 0;
-  transform: translateY(300px);
-}
-
-.tree-layer {
-  z-index: 12;
-  opacity: 0;
-  transform: translateY(250px);
-}
-
-.wall-layer {
-  z-index: 13;
-  opacity: 0;
-  transform: translateY(280px);
-}
-
-.truck-layer {
-  z-index: 14;
-  position: absolute;
+  transform: translateX(0) translateY(50vh);
+  transform: rotate(-20deg) scale(1.2);
   left: 0%;
+  top: 50vh;
+  width: 100%;
+  height: 140%;
 }
-.truck-layer img {
+
+.layer-flowers {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+  transform: scale(0.3);
+  width: 89%;
+  height: 87%;
+  top: 120px;
+  left: -10%;
+}
+
+.layer-smoke {
+  z-index: 6;
+  opacity: 0;
+  transform: translateX(0) translateY(-50vh);
+}
+
+.layer-truck {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+.layer-truck .layer-truck-container {
+  scale: 0.2;
+  transform: scaleX(-1);
+  position: absolute;
+}
+.layer-truck .layer-truck-container .truck-trash-container {
+  position: absolute;
+  top: -7%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.layer-truck .layer-truck-container .truck-bag {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.layer-truck .layer-truck-container .truck-trash {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.layer-truck .layer-truck-container .trash-bg {
+  transform: scaleX(-1) rotate(-28deg);
+  scale: 1.4;
+  left: -30%;
+  top: -47%;
+}
+.layer-truck .layer-truck-container .trash-wires {
+  transform: scaleX(-1) rotate(-91deg);
+  scale: 1.4;
+  left: -9%;
+  top: -56%;
+}
+.layer-truck .layer-truck-container .trash-barrel {
+  transform: scaleX(-1);
+  scale: 1.5;
+  left: -45%;
+}
+.layer-truck .layer-truck-container .trash-blood {
+  transform: scaleX(-1);
+  left: -6%;
+  top: -27%;
+}
+.layer-truck .layer-truck-container .trash-electronics {
+  transform: scaleX(-1);
+  top: -70%;
+  left: -50%;
+}
+
+.motion-path {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  scale: 0.2;
-}
-
-.motion-path {
-  position: absolute;
-  top: -27%;
-  left: -27%;
-  width: 100%;
-  height: 100%;
-  z-index: 20;
+  z-index: 100;
   pointer-events: auto;
 }
 

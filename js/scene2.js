@@ -5,7 +5,7 @@ const scene2 = document.querySelector(".scene2");
 const scene2Timeline = gsap.timeline({
   scrollTrigger: {
     trigger: scene2,
-    scrub: true,
+    scrub: 0.3,
     pin: true,
   },
 });
@@ -13,10 +13,10 @@ const scene2Timeline = gsap.timeline({
 // All layers start together but with different speeds
 scene2Timeline
   .to(
-    ".sun-layer",
+    ".layer-sun",
     {
-      transform: "translate(0, 0)",
-      duration: 0.3, // Fastest - finishes first
+      transform: "translate(-7%, -10%)",
+      duration: 1.6, // Fastest - finishes first
       ease: "power2.out",
     },
     0
@@ -24,8 +24,8 @@ scene2Timeline
   .to(
     ".sun-backdrop-layer",
     {
-      transform: "translate(0, 0)",
-      duration: 0.3, // Fastest - finishes first
+      transform: "translate(-7%, -10%)",
+      duration: 1.6, // Fastest - finishes first
       ease: "power2.out",
       onUpdate: function () {
         // Set display to block during animation
@@ -42,7 +42,7 @@ scene2Timeline
     ".backdrop-layer",
     {
       opacity: 0,
-      duration: 0.5, // Fastest - finishes first
+      duration: 1.5, // Fastest - finishes first
       ease: "power2.out",
       onUpdate: function () {
         // Set display to block during animation
@@ -56,128 +56,93 @@ scene2Timeline
     0
   ) // All start at the same time
   .to(
-    ".sky-lines-layer",
+    ".layer-bank",
     {
       opacity: 1,
       y: 0,
-      duration: 0.1, // Fast
+      top: "-20%",
+      duration: 1.6, // Medium-fast
       ease: "power2.out",
     },
     0
   )
   .to(
-    ".layer-1",
+    ".layer-flowers",
     {
       opacity: 1,
-      y: 0,
-      duration: 0.6, // Medium-fast
+      duration: 0.4,
+      width: "90%",
+      height: "100%",
+      top: "-1%",
+      left: "-3%",
+      scale: 1,
+      filter: "grayscale(0%) brightness(1)",
       ease: "power2.out",
     },
-    0
+    ">"
   )
+  .addLabel("before-trash")
   .to(
-    ".layer-2",
+    ".layer-smoke",
     {
       opacity: 1,
-      y: 0,
-      duration: 0.6, // Medium
+      duration: 0.8,
+      transform: "translate(0, 0)",
       ease: "power2.out",
     },
-    0
+    "before-trash+=1"
   )
   .to(
-    ".layer-4",
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.9, // Medium-slow
-      ease: "power2.out",
-    },
-    0
-  )
-  .to(
-    ".layer-5",
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.1, // Slow
-      ease: "power2.out",
-    },
-    0
-  )
-  .to(
-    ".layer-6",
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.3, // Slower
-      ease: "power2.out",
-    },
-    0
-  )
-  .to(
-    ".trees-layer",
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.5, // Slow
-      ease: "power2.out",
-    },
-    0
-  )
-  .to(
-    ".plant-layer",
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.7, // Slower
-      ease: "power2.out",
-    },
-    0
-  )
-  .to(
-    ".tree-layer",
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.7, // Slower
-      ease: "power2.out",
-    },
-    0
-  )
-  .to(
-    ".wall-layer",
-    {
-      opacity: 1,
-      y: 0,
-      duration: 2.1, // Slower
-      ease: "power2.out",
-    },
-    0.5
-  )
-  .to(
-    ".road-layer",
-    {
-      opacity: 1,
-      y: 0,
-      duration: 2.3, // Slowest - finishes last
-      ease: "power2.out",
-    },
-    0.7
-  )
-  .to(
-    ".truck-layer",
+    ".layer-truck",
     {
       motionPath: {
         path: "#truckPath",
         autoRotate: true,
         alignOrigin: [0.5, 0.5],
         align: "#truckPath",
-        start: 0.1,
-        end: 0.9,
       },
-      duration: 2.5, // Slowest - finishes last
+      duration: 1.4,
       ease: "power2.out",
     },
-    3.0
+    "before-trash+=1"
+  )
+  .to(
+    ".truck-trash-container",
+    {
+      duration: 2.5,
+      top: "-25.5%",
+      transform: "rotate(-20deg)",
+      ease: "power2.out",
+    },
+    ">+=0.3"
+  )
+  .addLabel("trash-thrown")
+  .to(
+    ".layer-smoke",
+    {
+      duration: 2.5,
+      height: "180%",
+      ease: "power2.out",
+    },
+    "<"
+  )
+  .to(
+    ".layer-flowers",
+    {
+      duration: 2.5,
+      filter: "grayscale(80%) brightness(0)",
+      ease: "power2.out",
+    },
+    "<"
+  )
+  .to(
+    ".layer-sun",
+    {
+      duration: 6.5,
+      top: "45%",
+      ease: "power2.out",
+    },
+    "<"
   );
+
+// MotionPathHelper.create(".layer-truck");

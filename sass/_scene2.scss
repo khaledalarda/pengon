@@ -1,6 +1,6 @@
 // Scene 2 styles
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 .scene2 {
   @include scene-base;
@@ -11,18 +11,14 @@
   z-index: $z-background;
 }
 
-.sky-lines-layer {
-  @include parallax-layer($z-sky-lines, 0, translateY(70vh));
-}
-
-.sun-layer {
+.layer-sun {
   z-index: $z-sun;
-  transform: translate(-50%, 60vh);
+  transform: translate(-50%, -20%);
 }
 
 .sun-backdrop-layer {
   z-index: 100;
-  transform: translate(-50%, 60vh);
+  transform: translate(-50%, -20%);
 }
 
 .backdrop-layer {
@@ -37,67 +33,96 @@
 }
 
 // Parallax layers with consistent structure
-.layer-1 {
-  @include parallax-layer($z-layers, 0, translateY(50vh));
-}
-
-.layer-2 {
-  @include parallax-layer($z-layers + 1, 0, translateY(75vh));
-}
-
-.layer-4 {
-  @include parallax-layer($z-layers + 2, 0, translateY(70vh));
-}
-
-.layer-5 {
-  @include parallax-layer($z-layers + 3, 0, translateY(90vh));
-}
-
-.layer-6 {
-  @include parallax-layer($z-layers + 4, 0, $translate-y-large);
-}
-
-.trees-layer {
-  @include parallax-layer($z-trees, 0, translateY(200px));
-}
-
-.plant-layer {
-  @include parallax-layer($z-plant, 0, translateY(220px));
-}
-
-.road-layer {
-  @include parallax-layer($z-road, 0, translateY(300px));
-}
-
-.tree-layer {
-  @include parallax-layer($z-tree, 0, translateY(250px));
-}
-
-.wall-layer {
-  @include parallax-layer($z-wall, 0, translateY(280px));
-}
-
-.truck-layer {
-  z-index: $z-truck;
-  position: absolute;
+.layer-bank {
+  @include parallax-layer($z-layers, 0, 0, 50vh);
+  transform: rotate(-20deg) scale(1.2);
   left: 0%;
-  
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  top: 50vh;
+  width: 100%;
+  height: 140%;
+}
+
+.layer-flowers {
+  @include parallax-layer($z-layers, 0, 0, 0);
+  // Initial state for scaling animation
+  transform: scale(0.3);
+  width: 89%;
+  height: 87%;
+  top: 120px;
+  left: -10%;
+}
+
+.layer-smoke {
+  @include parallax-layer($z-smoke, 0, 0, -50vh);
+}
+
+.layer-truck {
+  @include parallax-layer($z-layers, 1, 0, 0);
+  .layer-truck-container {
     scale: 0.2;
+    transform: scaleX(-1);
+    position: absolute;
+
+    .truck-trash-container {
+      position: absolute;
+      top: -7%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .truck-bag {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .truck-trash {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .trash-bg {
+      transform: scaleX(-1) rotate(-28deg);
+      scale: 1.4;
+      left: -30%;
+      top: -47%;
+    }
+
+    .trash-wires {
+      transform: scaleX(-1) rotate(-91deg);
+      scale: 1.4;
+      left: -9%;
+      top: -56%;
+    }
+
+    .trash-barrel {
+      transform: scaleX(-1);
+      scale: 1.5;
+      left: -45%;
+    }
+
+    .trash-blood {
+      transform: scaleX(-1);
+      left: -6%;
+      top: -27%;
+    }
+
+    .trash-electronics {
+      transform: scaleX(-1);
+      top: -70%;
+      left: -50%;
+    }
   }
 }
 
 .motion-path {
   position: absolute;
-  top: -27%;
-  left: -27%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  z-index: $z-motion-path;
+  z-index: 100;
   pointer-events: auto;
 }

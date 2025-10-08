@@ -7,10 +7,15 @@
   height: 100%;
 }
 
-@mixin parallax-layer($z-index, $opacity: 0, $transform: translateY(50vh)) {
+@mixin parallax-layer(
+  $z-index,
+  $opacity: 0,
+  $translateX: 0,
+  $translateY: 50vh
+) {
   z-index: $z-index;
   opacity: $opacity;
-  transform: $transform;
+  transform: translateX($translateX) translateY($translateY);
 }
 
 @mixin scene-base {
