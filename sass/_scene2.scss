@@ -56,6 +56,13 @@
   @include parallax-layer($z-smoke, 0, 0, -50vh);
 }
 
+.layer-squeezer {
+  @include parallax-layer($z-layers, 0, 0, 0);
+  position: absolute;
+  left: -6%;
+  scale: 0;
+}
+
 .layer-truck {
   @include parallax-layer($z-layers, 1, 0, 0);
   .layer-truck-container {
@@ -84,6 +91,13 @@
     }
 
     .trash-bg {
+      transform: scaleX(-1) rotate(-28deg);
+      scale: 1.4;
+      left: -30%;
+      top: -47%;
+    }
+
+    .trash-bg2 {
       transform: scaleX(-1) rotate(-28deg);
       scale: 1.4;
       left: -30%;

@@ -7,6 +7,8 @@ const scene2Timeline = gsap.timeline({
     trigger: scene2,
     scrub: 0.3,
     pin: true,
+    start: "top top",
+    end: "+=300%",
   },
 });
 
@@ -16,7 +18,7 @@ scene2Timeline
     ".layer-sun",
     {
       transform: "translate(-7%, -10%)",
-      duration: 1.6, // Fastest - finishes first
+      duration: 2.6,
       ease: "power2.out",
     },
     0
@@ -25,7 +27,7 @@ scene2Timeline
     ".sun-backdrop-layer",
     {
       transform: "translate(-7%, -10%)",
-      duration: 1.6, // Fastest - finishes first
+      duration: 2.6,
       ease: "power2.out",
       onUpdate: function () {
         // Set display to block during animation
@@ -42,7 +44,7 @@ scene2Timeline
     ".backdrop-layer",
     {
       opacity: 0,
-      duration: 1.5, // Fastest - finishes first
+      duration: 1.5,
       ease: "power2.out",
       onUpdate: function () {
         // Set display to block during animation
@@ -61,7 +63,7 @@ scene2Timeline
       opacity: 1,
       y: 0,
       top: "-20%",
-      duration: 1.6, // Medium-fast
+      duration: 2.6, // Medium-fast
       ease: "power2.out",
     },
     0
@@ -70,7 +72,7 @@ scene2Timeline
     ".layer-flowers",
     {
       opacity: 1,
-      duration: 0.4,
+      duration: 1.4,
       width: "90%",
       height: "100%",
       top: "-1%",
@@ -140,6 +142,139 @@ scene2Timeline
     {
       duration: 6.5,
       top: "45%",
+      ease: "power2.out",
+    },
+    "<"
+  )
+  .to(
+    ".trash-wires",
+    {
+      duration: 3.5,
+      left: "-109%",
+      top: "25%",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".trash-wires",
+    {
+      duration: 6,
+      left: "-159%",
+      top: "55%",
+      transform: "scaleX(-5) scaleY(5) rotate(-16deg)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".trash-electronics",
+    {
+      duration: 4,
+      top: "12%",
+      left: "-174%",
+      transform: "scaleX(-3) scaleY(3)",
+      ease: "power2.out",
+    },
+    "<+=3"
+  )
+  .to(
+    ".trash-electronics",
+    {
+      duration: 3,
+      top: "72%",
+      left: "-190%",
+      transform: "scaleX(-4) scaleY(4) rotate(5deg)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".trash-barrel",
+    {
+      duration: 6,
+      top: "143%",
+      left: "-65%",
+      transform: "scaleX(-4) scaleY(4) rotate(140deg)",
+      ease: "power2.out",
+    },
+    ">-=6"
+  )
+  .to(
+    ".trash-bg2",
+    {
+      duration: 0.5,
+      left: "-100%",
+      top: "10%",
+      ease: "power2.out",
+    },
+    "<"
+  )
+  .to(
+    ".trash-bg2",
+    {
+      duration: 3.5,
+      left: "-165%",
+      top: "126%",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".trash-bg2",
+    {
+      duration: 6,
+      transform: "scaleX(-5) scaleY(5) rotate(-11deg)",
+      ease: "power2.out",
+    },
+    "<"
+  )
+  .to(
+    ".trash-bg",
+    {
+      duration: 0.5,
+      left: "-100%",
+      top: "10%",
+      ease: "power2.out",
+    },
+    ">-=4"
+  )
+  .to(
+    ".trash-bg",
+    {
+      duration: 3.5,
+      left: "-165%",
+      top: "66%",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".trash-bg",
+    {
+      duration: 4,
+      transform: "scaleX(-5) scaleY(5) rotate(-11deg)",
+      ease: "power2.out",
+    },
+    "<"
+  )
+  .to(
+    ".trash-blood",
+    {
+      duration: 2,
+      top: "72%",
+      left: "-110%",
+      transform: "scaleX(-3.5) scaleY(3.5) rotate(5deg)",
+      ease: "power2.out",
+    },
+    ">-=4"
+  )
+  .to(
+    ".layer-squeezer",
+    {
+      duration: 3,
+      opacity: 1,
+      scale: 1,
       ease: "power2.out",
     },
     "<"
