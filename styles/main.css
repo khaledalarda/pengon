@@ -178,7 +178,7 @@ body {
 }
 
 .layer-truck {
-  z-index: 10;
+  z-index: 7;
   opacity: 1;
   transform: translateX(0) translateY(0);
 }

@@ -64,7 +64,7 @@
 }
 
 .layer-truck {
-  @include parallax-layer($z-layers, 1, 0, 0);
+  @include parallax-layer($z-trash, 1, 0, 0);
   .layer-truck-container {
     scale: 0.2;
     transform: scaleX(-1);
