@@ -1,0 +1,21 @@
+// Variables
+$primary-bg: #2A1C0A;
+
+// Z-index scale
+$z-background: 1;
+$z-sky-lines: 2;
+$z-sun: 3;
+$z-layers: 4;
+$z-trees: 9;
+$z-plant: 10;
+$z-road: 11;
+$z-tree: 12;
+$z-wall: 13;
+$z-truck: 14;
+$z-motion-path: 20;
+
+// Transforms
+$translate-y-large: translateY(100vh);
+$translate-y-medium: translateY(70vh);
+$translate-y-small: translateY(50vh);
+$translate-y-tiny: translateY(200px);

@@ -1,0 +1,19 @@
+// Mixins
+@mixin layer-base {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin parallax-layer($z-index, $opacity: 0, $transform: translateY(50vh)) {
+  z-index: $z-index;
+  opacity: $opacity;
+  transform: $transform;
+}
+
+@mixin scene-base {
+  position: relative;
+  overflow: hidden;
+}

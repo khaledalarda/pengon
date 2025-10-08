@@ -1,33 +1,17 @@
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(MotionPathPlugin);
-
-// Animate each section as it enters the viewport
-gsap.utils.toArray(".scene").forEach((panel) => {
-  gsap.from(panel, {
-    opacity: 0,
-    duration: 1,
-    scrollTrigger: {
-      trigger: panel,
-      start: "top 80%",
-      toggleActions: "play none none reverse",
-    },
-  });
-});
-
-// Parallax effect for scene1
-const scene1 = document.querySelector(".scene1");
+// Scene2-specific animations and parallax effects
+const scene2 = document.querySelector(".scene2");
 
 // Create a timeline for the entire scene animation
-const scene1Timeline = gsap.timeline({
+const scene2Timeline = gsap.timeline({
   scrollTrigger: {
-    trigger: scene1,
+    trigger: scene2,
     scrub: true,
     pin: true,
   },
 });
 
 // All layers start together but with different speeds
-scene1Timeline
+scene2Timeline
   .to(
     ".sun-layer",
     {

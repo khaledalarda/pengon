@@ -1,0 +1,33 @@
+// Base styles
+@use 'variables' as *;
+@use 'mixins' as *;
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  background: $primary-bg;
+}
+
+.scene {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  padding: 0;
+  text-align: center;
+}
+
+.layer {
+  @include layer-base;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+  }
+}
+
