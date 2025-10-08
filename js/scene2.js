@@ -95,7 +95,7 @@ scene2Timeline
     "before-trash+=1"
   )
   .to(
-    ".layer-truck",
+    [".layer-truck", ".layer-trash"],
     {
       motionPath: {
         path: "#truckPath",

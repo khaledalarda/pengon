@@ -43,7 +43,7 @@
 }
 
 .layer-flowers {
-  @include parallax-layer($z-layers, 0, 0, 0);
+  @include parallax-layer($z-flowers, 0, 0, 0);
   // Initial state for scaling animation
   transform: scale(0.3);
   width: 89%;
@@ -57,13 +57,13 @@
 }
 
 .layer-squeezer {
-  @include parallax-layer($z-layers, 0, 0, 0);
+  @include parallax-layer($z-squeezer, 0, 0, 0);
   position: absolute;
   left: -6%;
   scale: 0;
 }
 
-.layer-truck {
+.layer-trash {
   @include parallax-layer($z-trash, 1, 0, 0);
   .layer-truck-container {
     scale: 0.2;
@@ -74,12 +74,6 @@
       position: absolute;
       top: -7%;
       left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .truck-bag {
-      position: absolute;
       width: 100%;
       height: 100%;
     }
@@ -127,6 +121,29 @@
       transform: scaleX(-1);
       top: -70%;
       left: -50%;
+    }
+  }
+}
+
+.layer-truck {
+  @include parallax-layer($z-truck, 1, 0, 0);
+  .layer-truck-container {
+    scale: 0.2;
+    transform: scaleX(-1);
+    position: absolute;
+
+    .truck-trash-container {
+      position: absolute;
+      top: -7%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .truck-bag {
+      position: absolute;
+      width: 100%;
+      height: 100%;
     }
   }
 }
