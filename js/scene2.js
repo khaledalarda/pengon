@@ -278,6 +278,89 @@ scene2Timeline
       ease: "power2.out",
     },
     "<"
+  )
+  .to(
+    ".layer-bank",
+    {
+      opacity: 1,
+      top: 0,
+      left: 0,
+      duration: 2.6, // Medium-fast
+      transform: "rotate(0) scale(1)",
+      width: "100%",
+      height: "100%",
+      ease: "power2.out",
+    },
+    ">+=2"
+  )
+  .to(
+    ".layer-truck",
+    {
+      duration: 2.6,
+      transform: "rotate(16deg) scale(0.8, 0.8)",
+      left: "-22%",
+      top: "-35%",
+      ease: "power2.out",
+    },
+    "<"
+  )
+  .to(
+    ".layer-squeezer",
+    {
+      duration: 2.6,
+      transform: "rotate(20deg) scale(0.8, 0.8)",
+      opacity: 1,
+      top: "-8%",
+      left: "-5%",
+      ease: "power2.out",
+    },
+    "<"
+  )
+  .to(
+    ".layer-trash",
+    {
+      duration: 2.6,
+      transform: "rotate(17.9999deg) scale(0.7, 0.7)",
+      top: "-38%",
+      left: "-21%",
+      ease: "power2.out",
+    },
+    "<"
+  )
+  .to(
+    ".layer-flowers",
+    {
+      duration: 2.6,
+      transform: "rotate(17.9998deg) scale(0.7, 0.7)",
+      left: "-3%",
+      top: "-1%",
+      ease: "power2.out",
+    },
+    "<"
+  )
+  .to(
+    ".layer-map",
+    {
+      duration: 1.6,
+      opacity: 1,
+      transform: "translateX(0) translateY(0) rotate(5deg) scale(1.5)",
+      width: "100%",
+      height: "84%",
+      left: "-18%",
+      top: "15%",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".layer-text",
+    {
+      duration: 1.6,
+      opacity: 1,
+      transform: "translateX(0) translateY(-10%)",
+      ease: "power2.out",
+    },
+    ">"
   );
 
 // MotionPathHelper.create(".layer-truck");
