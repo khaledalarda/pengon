@@ -1,5 +1,7 @@
 // Variables
-$primary-bg: #2A1C0A;
+$primary-bg: #2a1c0a;
+$primary-text: #e3d7c5;
+$secondary-text: #c84a23;
 
 // Z-index scale
 $z-background: 1;
@@ -11,3 +13,6 @@ $z-trash: 8;
 $z-layers: 10;
 $z-truck: 12;
 $z-map: 13;
+$z-left-wall: 10;
+$z-truck-wall: 11;
+$z-right-wall: 12;

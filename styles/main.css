@@ -1,8 +1,33 @@
+@font-face {
+  font-family: "Baghdad";
+  src: url("../assets/fonts/Baghdad.ttc") format("truetype-collection");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DG Forsha Scribble";
+  src: url("../assets/fonts/dg-forsha-scribble.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FF Wahm Two";
+  src: url("../assets/fonts/ff-wahm-two.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Waseem";
+  src: url("../assets/fonts/Waseem.ttc") format("truetype-collection");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "DG Forsha Scribble", "Waseem", "Baghdad", Arial, sans-serif;
   overflow-x: hidden;
-  background: #2A1C0A;
+  background: #2a1c0a;
+  color: #e3d7c5;
 }
 
 .scene {
@@ -30,11 +55,11 @@ body {
   display: block;
 }
 
-.scene1 {
+.start-scene {
   position: relative;
   overflow: hidden;
 }
-.scene1 .scene1-text {
+.start-scene .start-scene-text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -47,15 +72,16 @@ body {
   color: white;
   text-align: center;
 }
-.scene1 .scene1-text img {
+.start-scene .start-scene-text img {
   width: 60px;
   height: auto;
+  animation: bounce 3s infinite;
 }
-.scene1 .scene1-text span {
+.start-scene .start-scene-text span {
   font-size: 1.2rem;
   font-weight: 500;
 }
-.scene1 .scene1-mouse {
+.start-scene .start-scene-mouse {
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -68,16 +94,19 @@ body {
   color: white;
   text-align: center;
 }
-.scene1 .scene1-mouse img {
+.start-scene .start-scene-mouse div {
+  display: flex;
+}
+.start-scene .start-scene-mouse img {
   width: 40px;
   height: auto;
   animation: bounce 2s infinite;
 }
-.scene1 .scene1-mouse span {
+.start-scene .start-scene-mouse span {
   font-size: 1rem;
   font-weight: 400;
 }
-.scene1 .scene1-info {
+.start-scene .start-scene-info {
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -90,11 +119,14 @@ body {
   text-align: center;
   cursor: pointer;
 }
-.scene1 .scene1-info img {
+.start-scene .start-scene-info img {
   width: 40px;
   height: auto;
 }
-.scene1 .scene1-info span {
+.start-scene .start-scene-info div {
+  display: flex;
+}
+.start-scene .start-scene-info span {
   font-size: 1rem;
   font-weight: 400;
 }
@@ -110,26 +142,22 @@ body {
   }
 }
 
-.scene2 {
+.scene1 {
   position: relative;
   overflow: hidden;
 }
-
-.background-layer {
+.scene1 .layer-bg {
   z-index: 1;
 }
-
-.layer-sun {
+.scene1 .layer-sun {
   z-index: 5;
   transform: translate(-50%, -20%);
 }
-
-.sun-backdrop-layer {
+.scene1 .sun-backdrop-layer {
   z-index: 100;
   transform: translate(-50%, -20%);
 }
-
-.backdrop-layer {
+.scene1 .backdrop-layer {
   z-index: 99;
   position: absolute;
   top: 0;
@@ -139,8 +167,7 @@ body {
   opacity: 0.7;
   background: black;
 }
-
-.layer-bank {
+.scene1 .layer-bank {
   z-index: 10;
   opacity: 0;
   transform: translateX(0) translateY(50vh);
@@ -150,8 +177,7 @@ body {
   width: 100%;
   height: 140%;
 }
-
-.layer-map {
+.scene1 .layer-map {
   z-index: 13;
   opacity: 0;
   transform: translateX(0) translateY(0);
@@ -161,20 +187,18 @@ body {
   left: -18%;
   top: 15%;
 }
-
-.layer-text {
+.scene1 .layer-text {
   z-index: 10;
   opacity: 0;
   transform: translateX(0) translateY(0);
 }
-.layer-text > div {
+.scene1 .layer-text > div {
   position: absolute;
   bottom: 10%;
   right: 20%;
   text-align: right;
 }
-
-.layer-flowers {
+.scene1 .layer-flowers {
   z-index: 7;
   opacity: 0;
   transform: translateX(0) translateY(0);
@@ -184,14 +208,12 @@ body {
   top: 120px;
   left: -10%;
 }
-
-.layer-smoke {
+.scene1 .layer-smoke {
   z-index: 6;
   opacity: 0;
   transform: translateX(0) translateY(-50vh);
 }
-
-.layer-squeezer {
+.scene1 .layer-squeezer {
   z-index: 7;
   opacity: 0;
   transform: translateX(0) translateY(0);
@@ -199,87 +221,84 @@ body {
   left: -6%;
   scale: 0;
 }
-
-.layer-trash {
+.scene1 .layer-trash {
   z-index: 8;
   opacity: 1;
   transform: translateX(0) translateY(0);
 }
-.layer-trash .layer-truck-container {
+.scene1 .layer-trash .layer-truck-container {
   scale: 0.2;
   transform: scaleX(-1);
   position: absolute;
 }
-.layer-trash .layer-truck-container .truck-trash-container {
+.scene1 .layer-trash .layer-truck-container .truck-trash-container {
   position: absolute;
   top: -7%;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.layer-trash .layer-truck-container .truck-trash {
+.scene1 .layer-trash .layer-truck-container .truck-trash {
   position: absolute;
   width: 100%;
   height: 100%;
 }
-.layer-trash .layer-truck-container .trash-bg {
+.scene1 .layer-trash .layer-truck-container .trash-bg {
   transform: scaleX(-1) rotate(-28deg);
   scale: 1.4;
   left: -30%;
   top: -47%;
 }
-.layer-trash .layer-truck-container .trash-bg2 {
+.scene1 .layer-trash .layer-truck-container .trash-bg2 {
   transform: scaleX(-1) rotate(-28deg);
   scale: 1.4;
   left: -30%;
   top: -47%;
 }
-.layer-trash .layer-truck-container .trash-wires {
+.scene1 .layer-trash .layer-truck-container .trash-wires {
   transform: scaleX(-1) rotate(-91deg);
   scale: 1.4;
   left: -9%;
   top: -56%;
 }
-.layer-trash .layer-truck-container .trash-barrel {
+.scene1 .layer-trash .layer-truck-container .trash-barrel {
   transform: scaleX(-1);
   scale: 1.5;
   left: -45%;
 }
-.layer-trash .layer-truck-container .trash-blood {
+.scene1 .layer-trash .layer-truck-container .trash-blood {
   transform: scaleX(-1);
   left: -6%;
   top: -27%;
 }
-.layer-trash .layer-truck-container .trash-electronics {
+.scene1 .layer-trash .layer-truck-container .trash-electronics {
   transform: scaleX(-1);
   top: -70%;
   left: -50%;
 }
-
-.layer-truck {
+.scene1 .layer-truck {
   z-index: 12;
   opacity: 1;
   transform: translateX(0) translateY(0);
 }
-.layer-truck .layer-truck-container {
+.scene1 .layer-truck .layer-truck-container {
   scale: 0.2;
   transform: scaleX(-1);
   position: absolute;
 }
-.layer-truck .layer-truck-container .truck-trash-container {
+.scene1 .layer-truck .layer-truck-container .truck-trash-container {
   position: absolute;
   top: -7%;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.layer-truck .layer-truck-container .truck-bag {
+.scene1 .layer-truck .layer-truck-container .truck-bag {
   position: absolute;
   width: 100%;
   height: 100%;
 }
-
-.truck-path {
+.scene1 .truck-path {
   position: absolute;
   top: 0;
   left: 0;
@@ -287,6 +306,449 @@ body {
   height: 100%;
   z-index: 100;
   pointer-events: auto;
+}
+
+.scene2 {
+  position: relative;
+  overflow: hidden;
+}
+.scene2 .layer-smoke {
+  z-index: 1;
+}
+.scene2 .layer-bg {
+  z-index: 1;
+  background-image: url("../assets/scenes/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.scene2 .layer-smoke {
+  z-index: 1;
+  opacity: 0.2;
+  transform: translateX(0) translateY(-100vh);
+  width: 120%;
+  height: 100%;
+  left: -20%;
+}
+.scene2 .layer-right-wall,
+.scene2 .layer-gate {
+  z-index: 12;
+  opacity: 0.2;
+  transform: translateX(35vw) translateY(0);
+}
+.scene2 .layer-left-wall {
+  z-index: 10;
+  opacity: 0.2;
+  transform: translateX(-55vw) translateY(0);
+}
+.scene2 .layer-sun {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) translateY(-30vh);
+}
+.scene2 .layer-truck {
+  scale: 0.3;
+}
+.scene2 .layer-text {
+  z-index: 12;
+  opacity: 0;
+  transform: translateX(0) translateY(15%);
+  position: absolute;
+  right: 10%;
+  bottom: 25%;
+  color: #e3d7c5;
+  text-align: right;
+  font-family: "DG Forsha Scribble", "Waseem", "Baghdad", Arial, sans-serif;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80px;
+}
+.scene2 .truck-1 {
+  z-index: 11;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+.scene2 .truck-2 {
+  z-index: 11;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+.scene2 .truck-3 {
+  z-index: 11;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+.scene2 .truck-4 {
+  z-index: 11;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+.scene2 .truck-5 {
+  z-index: 11;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+.scene2 .truck-6 {
+  z-index: 11;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+.scene2 .truck-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.scene2-1 {
+  position: relative;
+  overflow: hidden;
+}
+.scene2-1 .layer-bg {
+  z-index: 1;
+  background-image: url("../assets/scenes/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.scene2-1 .layer-text {
+  z-index: 12;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene2-1 .layer-text .text-1 {
+  direction: rtl;
+  color: #c84a23;
+  padding: 3% 5% 0 5%;
+  text-align: justify;
+  font-family: "DG Forsha Scribble";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38px;
+}
+.scene2-1 .layer-text .video-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5%;
+  gap: 5%;
+}
+.scene2-1 .layer-text .video-container .video {
+  min-width: 60%;
+  height: 40%;
+}
+.scene2-1 .layer-text .video-container .video .video-frame {
+  position: relative;
+  display: inline-block;
+}
+.scene2-1 .layer-text .video-container .video .video-frame video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.scene2-1 .layer-text .video-container .video .video-frame .frame-overlay {
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 10;
+  width: 125%;
+  height: 125%;
+  position: absolute;
+  top: -12%;
+  left: -18%;
+}
+.scene2-1 .layer-text .text-1,
+.scene2-1 .layer-text .text-2,
+.scene2-1 .layer-text .text-3,
+.scene2-1 .layer-text .video {
+  opacity: 0;
+  transform: translateY(15%);
+}
+.scene2-1 .layer-text .text-3 {
+  margin-top: 20%;
+}
+.scene2-1 .layer-text .text-2,
+.scene2-1 .layer-text .text-3 {
+  direction: rtl;
+  color: #e3d7c5;
+  text-align: justify;
+  font-family: "DG Forsha Scribble";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.scene2-2 {
+  position: relative;
+  overflow: hidden;
+}
+.scene2-2 .layer-bg {
+  z-index: 1;
+  background-image: url("../assets/scenes/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.scene2-2 .centered-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.scene2-2 .centered-video .video-frame {
+  position: relative;
+  display: inline-block;
+  max-width: 60%;
+}
+.scene2-2 .centered-video .video-frame video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.scene2-2 .centered-video .video-frame .frame-overlay {
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 10;
+  width: 125%;
+  height: 125%;
+  position: absolute;
+  top: -12%;
+  left: -18%;
+}
+
+.scene2-3 {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.scene2-3 .layer-bg {
+  z-index: 1;
+  background-image: url("../assets/scenes/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.scene2-3 .layer-text {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(-100vh);
+  direction: rtl;
+  color: #c84a23;
+  text-align: center;
+  font-family: "DG Forsha Scribble";
+  font-size: 200px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.scene2-3 .layer-text .number {
+  color: #c84a23;
+  text-align: center;
+  font-family: "DG Forsha Scribble";
+  font-size: 400px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.scene2-3 .layer-text .text {
+  color: #c84a23;
+  text-align: center;
+  font-family: "DG Forsha Scribble";
+  font-size: 200px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transform: translate(0px, -13%);
+  display: inline-block;
+}
+.scene2-3 .layer-text-2 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(100vh);
+  direction: rtl;
+  position: absolute;
+  bottom: 20%;
+  color: #fff;
+  text-align: center;
+  font-family: "DG Forsha Scribble";
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80px;
+}
+
+.scene3 {
+  position: relative;
+  overflow: hidden;
+}
+.scene3 .layer-bg {
+  z-index: 1;
+  background: #a3b6a7;
+}
+.scene3 .layer-land {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(20vh);
+  top: 60%;
+}
+.scene3 .layer-land img {
+  height: 40%;
+}
+.scene3 .layer-smoke {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(-50vh);
+  width: 140%;
+  height: 100%;
+  left: -40%;
+}
+.scene3 .layer-truck {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(-130%) translateY(0);
+  scale: 0.9;
+}
+.scene3 .layer-truck .layer-truck-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.scene3 .layer-truck .layer-truck-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.scene3 .layer-text-container {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-around;
+  width: 63%;
+  height: 80%;
+  scale: 0.7;
+  transform: rotate(-4deg);
+}
+.scene3 .layer-text-container div {
+  direction: rtl;
+}
+.scene3 .layer-text-container .layer-text-container-item {
+  opacity: 0;
+  color: #fff;
+  text-align: right;
+  font-family: "DG Forsha Scribble";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38px;
+}
+.scene3 .layer-text-container .layer-text-container-item .item-secondary {
+  color: #c84a23;
+  text-align: right;
+  font-family: "DG Forsha Scribble";
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80px;
+}
+.scene3 .layer-text-bottom {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene3 .layer-text-bottom > div {
+  width: 100%;
+  position: absolute;
+  bottom: 4%;
+  text-align: center;
+}
+
+.scene4 {
+  position: relative;
+  overflow: hidden;
+}
+.scene4 .layer-bg {
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.9);
+}
+.scene4 .layer-tree {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene4 .layer-eyes-1,
+.scene4 .layer-eyes-2,
+.scene4 .layer-eyes-3,
+.scene4 .layer-eyes-4 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene4 .layer-body-1 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(-1.5%) translateY(0);
+}
+.scene4 .layer-body-2 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(1.6%) translateY(0);
+}
+.scene4 .layer-body-3 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(2.7%) translateY(0);
+}
+.scene4 .layer-body-4 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(-0.2%) translateY(0);
+}
+.scene4 .layer-trash-1,
+.scene4 .layer-trash-3,
+.scene4 .layer-trash-5,
+.scene4 .layer-trash-6,
+.scene4 .layer-trash-7 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene4 .layer-ground {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+  width: 120%;
+}
+.scene4 .layer-barrel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+  bottom: -46%;
+  right: -28%;
+}
+.scene4 .layer-trash-bag {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+  bottom: -70%;
+  right: -40%;
 }
 
 /*# sourceMappingURL=main.css.map */

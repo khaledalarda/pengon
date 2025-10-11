@@ -1,12 +1,42 @@
 // Base styles
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
+
+// Font declarations
+@font-face {
+  font-family: "Baghdad";
+  src: url("../assets/fonts/Baghdad.ttc") format("truetype-collection");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DG Forsha Scribble";
+  src: url("../assets/fonts/dg-forsha-scribble.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FF Wahm Two";
+  src: url("../assets/fonts/ff-wahm-two.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Waseem";
+  src: url("../assets/fonts/Waseem.ttc") format("truetype-collection");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "DG Forsha Scribble", "Waseem", "Baghdad", Arial, sans-serif;
   overflow-x: hidden;
   background: $primary-bg;
+  color: $primary-text;
 }
 
 .scene {
@@ -22,7 +52,7 @@ body {
 
 .layer {
   @include layer-base;
-  
+
   img {
     width: 100%;
     height: 100%;
@@ -30,4 +60,3 @@ body {
     display: block;
   }
 }
-

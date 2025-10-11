@@ -1,0 +1,73 @@
+// Scene 4 styles
+@use "variables" as *;
+@use "mixins" as *;
+
+.scene4 {
+  @include scene-base;
+
+  // Black background with 90% opacity
+  .layer-bg {
+    z-index: $z-background;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .layer-tree {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-eyes-1,
+  .layer-eyes-2,
+  .layer-eyes-3,
+  .layer-eyes-4 {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-body-1 {
+    @include parallax-layer($z-layers, 0, -1.5%, 0);
+  }
+
+  .layer-body-2 {
+    @include parallax-layer($z-layers, 0, 1.6%, 0);
+  }
+
+  .layer-body-3 {
+    @include parallax-layer($z-layers, 0, 2.7%, 0);
+  }
+
+  .layer-body-4 {
+    @include parallax-layer($z-layers, 0, -0.2%, 0);
+  }
+
+  .layer-trash-1,
+  .layer-trash-3,
+  .layer-trash-5,
+  .layer-trash-6,
+  .layer-trash-7 {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-ground {
+    @include parallax-layer($z-layers, 0, 0, 0);
+    width: 120%;
+  }
+
+  .layer-barrel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: $z-layers;
+    opacity: 0;
+    bottom: -46%;
+    right: -28%;
+  }
+
+  .layer-trash-bag {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0;
+    bottom: -70%;
+    right: -40%;
+  }
+}

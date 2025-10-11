@@ -4,176 +4,286 @@
 
 .scene2 {
   @include scene-base;
-}
 
-// Parallax layer initial states
-.background-layer {
-  z-index: $z-background;
-}
+  .layer-smoke {
+    z-index: $z-background;
+  }
 
-.layer-sun {
-  z-index: $z-sun;
-  transform: translate(-50%, -20%);
-}
+  .layer-bg {
+    z-index: $z-background;
+    background-image: url("../assets/scenes/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-.sun-backdrop-layer {
-  z-index: 100;
-  transform: translate(-50%, -20%);
-}
+  .layer-smoke {
+    @include parallax-layer($z-background, 0.2, 0, -100vh);
+    width: 120%;
+    height: 100%;
+    left: -20%;
+  }
 
-.backdrop-layer {
-  z-index: 99;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-  background: black;
-}
+  .layer-right-wall,
+  .layer-gate {
+    @include parallax-layer($z-right-wall, 0.2, 35vw, 0);
+  }
 
-// Parallax layers with consistent structure
-.layer-bank {
-  @include parallax-layer($z-layers, 0, 0, 50vh);
-  transform: rotate(-20deg) scale(1.2);
-  left: 0%;
-  top: 50vh;
-  width: 100%;
-  height: 140%;
-}
+  .layer-left-wall {
+    @include parallax-layer($z-left-wall, 0.2, -55vw, 0);
+  }
 
-.layer-map {
-  @include parallax-layer($z-map, 0, 0, 0);
-  transform: translateX(0) translateY(0) rotate(5deg) scale(5);
-  width: 100%;
-  height: 84%;
-  left: -18%;
-  top: 15%;
-}
+  .layer-sun {
+    @include parallax-layer($z-layers, 1, 0, -30vh);
+  }
 
-.layer-text {
-  @include parallax-layer($z-layers, 0, 0, 0);
+  .layer-truck {
+    scale: 0.3;
+  }
 
-  > div {
+  .layer-text {
+    @include parallax-layer($z-right-wall, 0, 0, 15%);
     position: absolute;
-    bottom: 10%;
-    right: 20%;
+    right: 10%;
+    bottom: 25%;
+
+    color: $primary-text;
     text-align: right;
+    font-family: "DG Forsha Scribble", "Waseem", "Baghdad", Arial, sans-serif;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80px;
   }
-}
 
-.layer-flowers {
-  @include parallax-layer($z-flowers, 0, 0, 0);
-  // Initial state for scaling animation
-  transform: scale(0.3);
-  width: 89%;
-  height: 87%;
-  top: 120px;
-  left: -10%;
-}
+  .truck-1 {
+    @include parallax-layer($z-truck-wall, 1, 0, 0);
+  }
 
-.layer-smoke {
-  @include parallax-layer($z-smoke, 0, 0, -50vh);
-}
+  .truck-2 {
+    @include parallax-layer($z-truck-wall, 1, 0, 0);
+  }
 
-.layer-squeezer {
-  @include parallax-layer($z-squeezer, 0, 0, 0);
-  position: absolute;
-  left: -6%;
-  scale: 0;
-}
+  .truck-3 {
+    @include parallax-layer($z-truck-wall, 1, 0, 0);
+  }
 
-.layer-trash {
-  @include parallax-layer($z-trash, 1, 0, 0);
-  .layer-truck-container {
-    scale: 0.2;
-    transform: scaleX(-1);
+  .truck-4 {
+    @include parallax-layer($z-truck-wall, 1, 0, 0);
+  }
+
+  .truck-5 {
+    @include parallax-layer($z-truck-wall, 1, 0, 0);
+  }
+
+  .truck-6 {
+    @include parallax-layer($z-truck-wall, 1, 0, 0);
+  }
+
+  .truck-path {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: auto;
+  }
+}
 
-    .truck-trash-container {
-      position: absolute;
-      top: -7%;
-      left: 0;
-      width: 100%;
-      height: 100%;
+.scene2-1 {
+  @include scene-base;
+
+  .layer-bg {
+    z-index: $z-background;
+    background-image: url("../assets/scenes/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .layer-text {
+    @include parallax-layer($z-right-wall, 0, 0, 0);
+
+    .text-1 {
+      direction: rtl;
+      color: $secondary-text;
+      padding: 3% 5% 0 5%;
+      text-align: justify;
+      font-family: "DG Forsha Scribble";
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 38px;
     }
 
-    .truck-trash {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    .video-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 5%;
+      gap: 5%;
+
+      .video {
+        min-width: 60%;
+        height: 40%;
+
+        .video-frame {
+          position: relative;
+          display: inline-block;
+
+          video {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+          }
+
+          .frame-overlay {
+            object-fit: contain;
+            pointer-events: none;
+            z-index: 10;
+            width: 125%;
+            height: 125%;
+            position: absolute;
+            top: -12%;
+            left: -18%;
+          }
+        }
+      }
     }
 
-    .trash-bg {
-      transform: scaleX(-1) rotate(-28deg);
-      scale: 1.4;
-      left: -30%;
-      top: -47%;
+    .text-1,
+    .text-2,
+    .text-3,
+    .video {
+      opacity: 0;
+      transform: translateY(15%);
     }
 
-    .trash-bg2 {
-      transform: scaleX(-1) rotate(-28deg);
-      scale: 1.4;
-      left: -30%;
-      top: -47%;
+    .text-3 {
+      margin-top: 20%;
     }
 
-    .trash-wires {
-      transform: scaleX(-1) rotate(-91deg);
-      scale: 1.4;
-      left: -9%;
-      top: -56%;
-    }
-
-    .trash-barrel {
-      transform: scaleX(-1);
-      scale: 1.5;
-      left: -45%;
-    }
-
-    .trash-blood {
-      transform: scaleX(-1);
-      left: -6%;
-      top: -27%;
-    }
-
-    .trash-electronics {
-      transform: scaleX(-1);
-      top: -70%;
-      left: -50%;
+    .text-2,
+    .text-3 {
+      direction: rtl;
+      color: $primary-text;
+      text-align: justify;
+      font-family: "DG Forsha Scribble";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px;
     }
   }
 }
 
-.layer-truck {
-  @include parallax-layer($z-truck, 1, 0, 0);
-  .layer-truck-container {
-    scale: 0.2;
-    transform: scaleX(-1);
+.scene2-2 {
+  @include scene-base;
+
+  .layer-bg {
+    z-index: $z-background;
+    background-image: url("../assets/scenes/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .centered-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: $z-layers;
+
+    .video-frame {
+      position: relative;
+      display: inline-block;
+      max-width: 60%;
+
+      video {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .frame-overlay {
+        object-fit: contain;
+        pointer-events: none;
+        z-index: 10;
+        width: 125%;
+        height: 125%;
+        position: absolute;
+        top: -12%;
+        left: -18%;
+      }
+    }
+  }
+}
+
+.scene2-3 {
+  @include scene-base;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .layer-bg {
+    z-index: $z-background;
+    background-image: url("../assets/scenes/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .layer-text {
+    @include parallax-layer($z-layers, 0, 0, -100vh);
+    direction: rtl;
+    color: $secondary-text;
+    text-align: center;
+    font-family: "DG Forsha Scribble";
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    .number {
+      color: $secondary-text;
+      text-align: center;
+      font-family: "DG Forsha Scribble";
+      font-size: 400px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .text {
+      color: $secondary-text;
+      text-align: center;
+      font-family: "DG Forsha Scribble";
+      font-size: 200px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      transform: translate(0px, -13%);
+      display: inline-block;
+    }
+  }
+
+  .layer-text-2 {
+    @include parallax-layer($z-layers, 0, 0, 100vh);
+    direction: rtl;
     position: absolute;
-
-    .truck-trash-container {
-      position: absolute;
-      top: -7%;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .truck-bag {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
+    bottom: 20%;
+    color: #fff;
+    text-align: center;
+    font-family: "DG Forsha Scribble";
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80px;
   }
-}
-
-.truck-path {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  pointer-events: auto;
 }

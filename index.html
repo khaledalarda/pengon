@@ -11,35 +11,35 @@
     <script src="https://unpkg.com/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
   </head>
   <body>
-    <section class="scene scene1">
+    <section class="scene start-scene">
       <div class="layer">
-        <img src="./assets/scenes/background.PNG" alt="Background" />
+        <img src="./assets/scenes/bg.png" alt="Background" />
       </div>
-      <div class="scene1-text">
+      <div class="start-scene-text">
         <div>
           <img src="./assets/images/headphones.png" alt="Headphones" />
         </div>
         <span> لتحصل على تجربة أفضل، يفضل إستخدام سماعات الأذن </span>
       </div>
-      <div class="scene1-mouse">
+      <div class="start-scene-mouse">
         <div>
           <img src="./assets/svg/mouse_down.svg" alt="Mouse Down" />
         </div>
         <span> اسحب للأسفل </span>
       </div>
-      <div class="scene1-info">
+      <div class="start-scene-info">
         <span>اعرف عنا</span>
         <div>
           <img src="./assets/images/info.png" alt="Info" />
         </div>
       </div>
     </section>
-    <section class="scene scene2">
+    <section class="scene scene1">
       <div class="layer backdrop-layer"></div>
       <div class="layer sun-backdrop-layer">
         <img src="./assets/scenes/scene1/scene1.1/sun.png" alt="Sun Backdrop" />
       </div>
-      <div class="layer background-layer">
+      <div class="layer layer-bg">
         <img src="./assets/scenes/scene1/scene1.1/bg.png" alt="Background" />
       </div>
       <div class="layer layer-sun">
@@ -145,11 +145,238 @@
             <span>الضفة الغربية</span>
           </div>
           <span>هي <span>&quot;المكب الكبير&quot;</span> لنفايات الاحتلال</span>
-          <div>يا زلمه غلبتني زبالتكم</div>
         </div>
       </div>
     </section>
+    <section class="scene scene2">
+      <div class="layer layer-bg">
+        <img src="./assets/scenes/scene2/bg.png" alt="bg" />
+      </div>
+      <div class="layer layer-smoke">
+        <img src="./assets/scenes/scene2/smoke.png" alt="smoke" />
+      </div>
+      <div class="layer layer-sun">
+        <img src="./assets/scenes/scene2/sun.png" alt="sun" />
+      </div>
+      <div class="layer layer-left-wall">
+        <img src="./assets/scenes/scene2/left_wall.png" alt="left wall" />
+      </div>
+      <div class="layer layer-truck truck-1">
+        <img src="./assets/scenes/scene2/truck.png" alt="truck" />
+      </div>
+      <div class="layer layer-truck truck-2">
+        <img src="./assets/scenes/scene2/truck.png" alt="truck" />
+      </div>
+      <div class="layer layer-truck truck-3">
+        <img src="./assets/scenes/scene2/truck.png" alt="truck" />
+      </div>
+      <div class="layer layer-truck truck-4">
+        <img src="./assets/scenes/scene2/truck.png" alt="truck" />
+      </div>
+      <div class="layer layer-truck truck-5">
+        <img src="./assets/scenes/scene2/truck.png" alt="truck" />
+      </div>
+      <div class="layer layer-truck truck-6">
+        <img src="./assets/scenes/scene2/truck.png" alt="truck" />
+      </div>
+      <div class="layer layer-gate">
+        <img src="./assets/scenes/scene2/gate.png" alt="gate" />
+      </div>
+      <div class="layer layer-right-wall">
+        <img src="./assets/scenes/scene2/right_wall.png" alt="right wall" />
+      </div>
+      <div class="layer layer-truck-path">
+        <svg
+          class="truck-path"
+          viewBox="-25 -10 50 30"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <path
+            id="wallTruckPath"
+            d="M39.838,13.592 C35.031,13.593 20.779,13.802 16.429,13.706 11.376,13.581 0.52,15.147 -1.528,14.981 -5.508,14.625 -13.69124,14.07176 -19.63834,14.26328 -21.12512,14.31116 -31.479,14.083 -37.981,14.051 "
+            stroke="transparent"
+            fill="none"
+          />
+        </svg>
+      </div>
+      <div class="layer-text">
+        <div>تصدير</div>
+        <div>التلوث</div>
+      </div>
+    </section>
+    <section class="scene scene2-1">
+      <div class="layer layer-bg"></div>
+      <div class="layer layer-text">
+        <div class="text-1">
+          لم يعد تهريب النفايات الإسرائيلية إلى أراضي الضـــفة الغربـــية سراً ،
+          أنه يحدث تحت أنظار الجميع، عشرات الشاحنات الاسرائيلية تعبر الحواجز
+          يومياً محمّلة بمختلف أنــــواع النفايات الصناعـــــية السامة،
+          تُفـــــرغ حمولتها في أراضٍ فلسطينية محاذية لجدار الفصل العنصري. 
+        </div>
+        <div class="video-container">
+          <div class="video">
+            <div class="video-frame">
+              <img
+                src="./assets/images/v_frame1.png"
+                alt="Video Frame"
+                class="frame-overlay"
+              />
+              <img
+                src="./assets/images/v_frame2.png"
+                alt="Video Frame"
+                class="frame-overlay"
+              />
+              <video controls>
+                <source src="./assets/videos/scene2_1_v.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <div>
+            <p class="text-2">
+              عمليات التهريب تُدار عبر شبكة منظمة تمتد من المستوى الرسمي
+              الإسرائيلي حتى سماسرة محليين. فتكلفة التخلص الآمن من النفايات داخل
+              إسرائيل مرتفعة وتخضع لبروتوكولات دولية صارمة، ما يدفع الشركات
+              الإسرائيلية إلى تهريبها نحو أراضي السلطة الفلسطينية باعتبارها
+              الخيار الأقل تكلفة والأقل رقابة.
+            </p>
+            <p class="text-3">
+              يتولى العملية سماسرة ومقاولون من الجانبين، بعضهم من الداخل
+              الإسرائيلي وآخرون من الضفة الغربية، بينما يؤجّر أصحاب الأراضي
+              الفلسطينيون مساحاتهم مقابل مبالغ زهيدة، غالبًا دون إدراك لحجم
+              الخطر البيئي والصحي الذي يهدد أرضهم ومجتمعهم على المدى البعيد.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="scene scene2-2">
+      <div class="layer layer-bg"></div>
+      <div class="centered-video">
+        <div class="video-frame">
+          <img
+            src="./assets/images/v_frame1.png"
+            alt="Video Frame"
+            class="frame-overlay"
+          />
+          <video controls>
+            <source src="./assets/videos/scene2_2_v.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+    <section class="scene scene2-3">
+      <div class="layer layer-bg"></div>
+      <div class="layer-text">
+        <span class="number">50</span> <span class="text">عاماً</span>
+      </div>
+      <div class="layer-text-2">
+        تعمل منظومة تهريب النفايات الإسرائيلية دون انقطاع
+      </div>
+    </section>
+    <section class="scene scene3">
+      <div class="layer layer-bg"></div>
+      <div class="layer layer-smoke">
+        <img src="./assets/scenes/scene3/smoke.png" alt="smoke" />
+      </div>
+      <div class="layer layer-land">
+        <img src="./assets/scenes/scene3/land.png" alt="land" />
+      </div>
+      <div class="layer layer-truck">
+        <img src="./assets/scenes/scene3/truck.png" alt="truck" />
+        <div class="layer-truck-container">
+          <img src="./assets/scenes/scene3/wastes.png" alt="wastes" />
+          <img src="./assets/scenes/scene3/truck_box.png" alt="truck box" />
+          <div class="layer-text-container">
+            <div class="layer-text-container-item">
+              <div>حجم التجارة</div>
+              <div>جمع/نقل/تفكيك/معادن</div>
+              <div class="item-secondary">610 مليون</div>
+              <div class="item-secondary">دولار</div>
+            </div>
+            <div class="layer-text-container-item">
+              <div>النفايات السائلة</div>
+              <div>صرف من داخل</div>
+              <div>إسرائيل بإتجاه الضفة</div>
+              <div class="item-secondary">440 مليون</div>
+              <div class="item-secondary">طن</div>
+            </div>
+            <div class="layer-text-container-item">
+              <div>النفايات الصلبة</div>
+              <div>المهربة من إسرائيل</div>
+              <div>إلى الضفة</div>
+              <div class="item-secondary"><span>8.1</span> مليون</div>
+              <div class="item-secondary">طن</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layer layer-text-bottom">
+        <div>تقديرات متوسطة مؤكدة للفترة 2025 - 2000</div>
+      </div>
+    </section>
+    <section class="scene scene4">
+      <div class="layer layer-bg"></div>
+      <div class="layer layer-tree">
+        <img src="./assets/scenes/scene4/tree.png" alt="tree" />
+      </div>
+      <div class="layer layer-ground">
+        <img src="./assets/svg/ground.svg" alt="ground" />
+      </div>
+      <div class="layer layer-tree">
+        <img src="./assets/svg/tree.svg" alt="tree" />
+      </div>
+      <div class="layer layer-body-1">
+        <img src="./assets/svg/body_1.svg" alt="body" />
+      </div>
+      <div class="layer layer-body-2">
+        <img src="./assets/svg/body_2.svg" alt="body" />
+      </div>
+      <div class="layer layer-body-3">
+        <img src="./assets/svg/body_3.svg" alt="body" />
+      </div>
+      <div class="layer layer-body-4">
+        <img src="./assets/svg/body_4.svg" alt="body" />
+      </div>
+      <div class="layer layer-eyes-1">
+        <img src="./assets/scenes/scene4/eyes1.png" alt="eyes" />
+      </div>
+      <div class="layer layer-eyes-2">
+        <img src="./assets/scenes/scene4/eyes2.png" alt="eyes" />
+      </div>
+      <div class="layer layer-eyes-3">
+        <img src="./assets/scenes/scene4/eyes3.png" alt="eyes" />
+      </div>
+      <div class="layer layer-eyes-4">
+        <img src="./assets/scenes/scene4/eyes4.png" alt="eyes" />
+      </div>
+      <div class="layer layer-trash-1">
+        <img src="./assets/svg/trash_1.svg" alt="trash" />
+      </div>
+      <div class="layer layer-trash-3">
+        <img src="./assets/svg/trash_3.svg" alt="trash" />
+      </div>
+      <div class="layer layer-trash-5">
+        <img src="./assets/svg/trash_5.svg" alt="trash" />
+      </div>
+      <div class="layer layer-trash-6">
+        <img src="./assets/svg/trash_6.svg" alt="trash" />
+      </div>
+      <div class="layer layer-trash-7">
+        <img src="./assets/svg/trash_7.svg" alt="trash" />
+      </div>
+      <div class="layer-barrel">
+        <img src="./assets/svg/barrel.svg" alt="tree" />
+      </div>
+      <div class="layer-trash-bag">
+        <img src="./assets/svg/trash_bag.svg" alt="trash bag" />
+      </div>
+    </section>
     <script src="js/common.js"></script>
+    <script src="js/scene1.js"></script>
     <script src="js/scene2.js"></script>
+    <script src="js/scene3.js"></script>
+    <script src="js/scene4.js"></script>
   </body>
 </html>
