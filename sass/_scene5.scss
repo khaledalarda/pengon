@@ -1,0 +1,71 @@
+// Scene 5 styles
+@use "variables" as *;
+@use "mixins" as *;
+
+.scene5 {
+  @include scene-base;
+
+  .layer-bg {
+    z-index: $z-background;
+    background: #a3b6a7;
+  }
+
+  .layer-barrel {
+    @include parallax-layer($z-layers, 0, 0, 0);
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    bottom: 17%;
+    top: unset;
+    right: 35%;
+    left: unset;
+  }
+
+  .layer-city {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-colored-bags {
+    @include parallax-layer($z-layers, 0, 0, 0);
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    width: 25%;
+    height: 25%;
+  }
+
+  .layer-fire-smoke {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-fire {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-fire2 {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-fire3 {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-fire4 {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-houses-fire {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-smoke {
+    @include parallax-layer($z-layers, 0, 0, 0);
+    width: 140%;
+    height: 100%;
+    left: -40%;
+  }
+
+  .layer-trash {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+}

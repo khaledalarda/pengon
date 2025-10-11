@@ -751,4 +751,83 @@ body {
   right: -40%;
 }
 
+.scene5 {
+  position: relative;
+  overflow: hidden;
+}
+.scene5 .layer-bg {
+  z-index: 1;
+  background: #a3b6a7;
+}
+.scene5 .layer-barrel {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  bottom: 17%;
+  top: unset;
+  right: 35%;
+  left: unset;
+}
+.scene5 .layer-city {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene5 .layer-colored-bags {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  width: 25%;
+  height: 25%;
+}
+.scene5 .layer-fire-smoke {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene5 .layer-fire {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene5 .layer-fire2 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene5 .layer-fire3 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene5 .layer-fire4 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene5 .layer-houses-fire {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene5 .layer-smoke {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+  width: 140%;
+  height: 100%;
+  left: -40%;
+}
+.scene5 .layer-trash {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+
 /*# sourceMappingURL=main.css.map */
