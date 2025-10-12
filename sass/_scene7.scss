@@ -1,0 +1,23 @@
+// Scene 5 styles
+@use "variables" as *;
+@use "mixins" as *;
+
+.scene7 {
+  @include scene-base;
+
+  .layer-bg {
+    z-index: $z-background;
+    background: #e3d7c5;
+  }
+
+  .layer-smoke {
+    @include parallax-layer($z-layers, 0, 0, -50vh);
+    width: 140%;
+    height: 100%;
+    left: -40%;
+  }
+
+  .layer-ground {
+    @include parallax-layer($z-layers, 0, 0, 50vh);
+  }
+}

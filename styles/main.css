@@ -329,6 +329,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: brightness(1.6);
 }
 .scene2 .layer-smoke {
   z-index: 1;
@@ -422,6 +423,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: brightness(1.6);
 }
 .scene2-1 .layer-text {
   z-index: 10;
@@ -439,6 +441,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: brightness(1.6);
 }
 .scene2-2 .layer-video {
   z-index: 10;
@@ -463,6 +466,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: brightness(1.6);
 }
 .scene2-3 .layer-text {
   z-index: 10;
@@ -518,6 +522,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: brightness(1.6);
 }
 .scene2-4 .layer-text {
   z-index: 10;
@@ -913,6 +918,28 @@ body {
 }
 .scene6 .layer-text > div {
   margin-right: 6%;
+}
+
+.scene7 {
+  position: relative;
+  overflow: hidden;
+}
+.scene7 .layer-bg {
+  z-index: 1;
+  background: #e3d7c5;
+}
+.scene7 .layer-smoke {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(-50vh);
+  width: 140%;
+  height: 100%;
+  left: -40%;
+}
+.scene7 .layer-ground {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(50vh);
 }
 
 /*# sourceMappingURL=main.css.map */
