@@ -941,5 +941,14 @@ body {
   opacity: 0;
   transform: translateX(0) translateY(50vh);
 }
+.scene7 .layer-glass-box {
+  opacity: 1;
+  rotate: -10;
+  transform-origin: top center;
+  top: -50%;
+  z-index: 10;
+  scale: 0.5;
+  width: 60%;
+}
 
 /*# sourceMappingURL=main.css.map */

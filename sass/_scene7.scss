@@ -20,4 +20,14 @@
   .layer-ground {
     @include parallax-layer($z-layers, 0, 0, 50vh);
   }
+
+  .layer-glass-box {
+    opacity: 1;
+    rotate: -10;
+    transform-origin: top center;
+    top: -50%;
+    z-index: $z-layers;
+    scale: 0.5;
+    width: 60%;
+  }
 }
