@@ -168,7 +168,6 @@ scene2Timeline
     ">"
   );
 
-// Scene2-specific animations and parallax effects
 const scene2_1 = document.querySelector(".scene2-1");
 
 // Create a timeline for the entire scene animation
@@ -180,56 +179,38 @@ const scene2_1Timeline = gsap.timeline({
   },
 });
 
-scene2_1Timeline
-  .to(
-    ".scene2-1 .layer-text",
-    {
-      duration: 1,
-      opacity: 1,
-      ease: "power2.out",
-    },
-    0
-  )
-  .to(
-    ".scene2-1 .layer-text .text-1",
-    {
-      duration: 2,
-      transform: "translateY(0)",
-      opacity: 1,
-      ease: "power2.out",
-    },
-    ">"
-  )
-  .to(
-    ".scene2-1 .layer-text .text-2",
-    {
-      duration: 2,
-      transform: "translateY(0)",
-      opacity: 1,
-      ease: "power2.out",
-    },
-    ">"
-  )
-  .to(
-    ".scene2-1 .layer-text .text-3",
-    {
-      duration: 2,
-      transform: "translateY(0)",
-      opacity: 1,
-      ease: "power2.out",
-    },
-    ">"
-  )
-  .to(
-    ".scene2-1 .layer-text .video",
-    {
-      duration: 2,
-      transform: "translateY(0)",
-      opacity: 1,
-      ease: "power2.out",
-    },
-    ">"
-  );
+scene2_1Timeline.to(
+  ".scene2-1 .layer-text",
+  {
+    duration: 2,
+    opacity: 1,
+    transform: "translateY(0)",
+    ease: "power2.out",
+  },
+  0
+);
+
+const scene2_2 = document.querySelector(".scene2-2");
+
+// Create a timeline for the entire scene animation
+const scene2_2Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene2_2,
+    scrub: 0.3,
+    pin: true,
+  },
+});
+
+scene2_2Timeline.to(
+  ".scene2-2 .layer-video",
+  {
+    duration: 2,
+    opacity: 1,
+    transform: "translateY(0)",
+    ease: "power2.out",
+  },
+  0
+);
 
 const scene2_3 = document.querySelector(".scene2-3");
 
@@ -244,7 +225,50 @@ const scene2_3Timeline = gsap.timeline({
 
 scene2_3Timeline
   .to(
-    ".scene2-3 .layer-text",
+    ".scene2-3 .text-1",
+    {
+      duration: 2,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene2-3 .text-2",
+    {
+      duration: 2,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene2-3 .video-frame",
+    {
+      duration: 2,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  );
+
+const scene2_4 = document.querySelector(".scene2-4");
+
+// Create a timeline for the entire scene animation
+const scene2_4Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene2_4,
+    scrub: 0.3,
+    pin: true,
+  },
+});
+
+scene2_4Timeline
+  .to(
+    ".scene2-4 .layer-text",
     {
       transform: "translateY(0)",
       duration: 2,
@@ -254,7 +278,7 @@ scene2_3Timeline
     0
   )
   .to(
-    ".scene2-3 .layer-text-2",
+    ".scene2-4 .layer-text-2",
     {
       duration: 2,
       transform: "translateY(0)",
