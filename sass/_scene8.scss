@@ -1,0 +1,106 @@
+// Scene 5 styles
+@use "variables" as *;
+@use "mixins" as *;
+
+.scene8 {
+  @include scene-base;
+
+  .layer-bg {
+    z-index: $z-background;
+    background: #a3b6a7;
+  }
+
+  .layer-smoke {
+    @include parallax-layer($z-layers, 0, 0, -50vh);
+    width: 140%;
+    height: 100%;
+    left: -40%;
+  }
+
+  .layer-ground {
+    @include parallax-layer($z-layers, 0, 0, 50vh);
+  }
+
+  .layer-lion {
+    @include parallax-layer($z-layers, 1, -60vw, 50vh);
+  }
+
+  .layer-lion-open {
+    @include parallax-layer($z-layers, 0, 0, 0);
+  }
+
+  .layer-tooth-1-container {
+    @include parallax-layer($z-layers, 1, 0, 0);
+    width: 1.5%;
+    height: 4.5%;
+    left: 47.7%;
+    top: 59%;
+  }
+
+  .layer-tooth-1 {
+    @include parallax-layer($z-layers, 0, 0, 0);
+    rotate: 26deg;
+  }
+
+  .layer-tooth-2-container {
+    @include parallax-layer($z-layers, 1, 0, 0);
+    width: 2.5%;
+    height: 7%;
+    left: 47.7%;
+    top: 59%;
+    rotate: 5deg;
+  }
+
+  .layer-tooth-2 {
+    @include parallax-layer($z-layers, 0, 0, 0);
+    rotate: -40deg;
+  }
+
+  .layer-tooth-3-container {
+    @include parallax-layer($z-layers, 1, 0, 0);
+    width: 3%;
+    height: 7%;
+    left: 47.7%;
+    top: 59%;
+    rotate: 53deg;
+  }
+
+  .layer-tooth-3 {
+    @include parallax-layer($z-layers, 0, 0, 0);
+    rotate: -40deg;
+  }
+
+  .layer-tooth-4-container {
+    @include parallax-layer($z-layers, 1, 0, 0);
+    width: 1.5%;
+    height: 4.5%;
+    left: 48.7%;
+    top: 59%;
+    rotate: 53deg;
+  }
+
+  .layer-tooth-4 {
+    @include parallax-layer($z-layers, 0, 0, 0);
+    rotate: -40deg;
+  }
+
+  .layer-tooth-path {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: auto;
+  }
+
+  .tooth-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: auto;
+  }
+}

@@ -188,13 +188,3 @@ scene3Timeline
     },
     ">"
   );
-
-//   .to(
-//     ".scene3 .layer-truck-container",
-//     {
-//       duration: 3,
-//       transform: "translateX(0) translateY(-10%) rotate(-5deg)",
-//       ease: "power2.out",
-//     },
-//     ">"
-//   )

@@ -951,4 +951,117 @@ body {
   width: 60%;
 }
 
+.scene8 {
+  position: relative;
+  overflow: hidden;
+}
+.scene8 .layer-bg {
+  z-index: 1;
+  background: #a3b6a7;
+}
+.scene8 .layer-smoke {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(-50vh);
+  width: 140%;
+  height: 100%;
+  left: -40%;
+}
+.scene8 .layer-ground {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(50vh);
+}
+.scene8 .layer-lion {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(-60vw) translateY(50vh);
+}
+.scene8 .layer-lion-open {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+}
+.scene8 .layer-tooth-1-container {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  width: 1.5%;
+  height: 4.5%;
+  left: 47.7%;
+  top: 59%;
+}
+.scene8 .layer-tooth-1 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+  rotate: 26deg;
+}
+.scene8 .layer-tooth-2-container {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  width: 2.5%;
+  height: 7%;
+  left: 47.7%;
+  top: 59%;
+  rotate: 5deg;
+}
+.scene8 .layer-tooth-2 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+  rotate: -40deg;
+}
+.scene8 .layer-tooth-3-container {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  width: 3%;
+  height: 7%;
+  left: 47.7%;
+  top: 59%;
+  rotate: 53deg;
+}
+.scene8 .layer-tooth-3 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+  rotate: -40deg;
+}
+.scene8 .layer-tooth-4-container {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  width: 1.5%;
+  height: 4.5%;
+  left: 48.7%;
+  top: 59%;
+  rotate: 53deg;
+}
+.scene8 .layer-tooth-4 {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+  rotate: -40deg;
+}
+.scene8 .layer-tooth-path {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: auto;
+}
+.scene8 .tooth-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: auto;
+}
+
 /*# sourceMappingURL=main.css.map */
