@@ -1064,4 +1064,32 @@ body {
   pointer-events: auto;
 }
 
+.scene9 {
+  position: relative;
+  overflow: hidden;
+}
+.scene9 .layer-bg {
+  z-index: 1;
+  background: #e3d7c5;
+}
+.scene9 .layer-smoke {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(-50vh);
+  width: 140%;
+  height: 100%;
+  left: -40%;
+}
+.scene9 .layer-ground {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(50vh);
+}
+.scene9 .layer-tree {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+  scale: 5;
+}
+
 /*# sourceMappingURL=main.css.map */

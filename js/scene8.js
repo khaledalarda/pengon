@@ -31,7 +31,18 @@ scene8Timeline
       ease: "power2.out",
     },
     0
-  )
+  );
+
+gsap.to(".scene8 .layer-smoke", {
+  x: "10%",
+  duration: 8,
+  ease: "power2.out",
+  yoyo: true,
+  repeat: -1,
+  delay: 1,
+});
+
+scene8Timeline
   .to(
     ".scene8 .layer-lion",
     {
@@ -151,56 +162,5 @@ scene8Timeline
     },
     "<"
   );
-// .to(
-//   ".scene8 .layer-tooth-2",
-//   {
-//     duration: 4,
-//     ease: "power2.out",
-//     motionPath: {
-//       path: "#tooth2Path",
-//       autoRotate: false,
-//       alignOrigin: [0.5, 0.5],
-//       align: "#tooth2Path",
-//     },
-//   },
-//   "<"
-// )
-// .to(
-//   ".scene8 .layer-tooth-3",
-//   {
-//     duration: 4,
-//     ease: "power2.out",
-//     motionPath: {
-//       path: "#tooth3Path",
-//       autoRotate: false,
-//       alignOrigin: [0.5, 0.5],
-//       align: "#tooth3Path",
-//     },
-//   },
-//   "<"
-// )
-// .to(
-//   ".scene8 .layer-tooth-4",
-//   {
-//     duration: 4,
-//     ease: "power2.out",
-//     motionPath: {
-//       path: "#tooth4Path",
-//       autoRotate: false,
-//       alignOrigin: [0.5, 0.5],
-//       align: "#tooth4Path",
-//     },
-//   },
-//   "<"
-// );
-
-gsap.to(".scene8 .layer-smoke", {
-  x: "10%",
-  duration: 8,
-  ease: "power2.out",
-  yoyo: true,
-  repeat: -1,
-  delay: 1,
-});
 
 // MotionPathHelper.create(".scene8 .layer-tooth-1-container");
