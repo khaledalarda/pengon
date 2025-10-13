@@ -43,7 +43,7 @@
     scale: 1.5;
 
     .layer-bank {
-      @include parallax-layer(11, 1, 0, 0);
+      @include parallax-layer(11, 0, 0, 50vh);
       position: absolute;
       width: 100%;
       height: 100%;
@@ -62,7 +62,9 @@
       height: 100%;
 
       img {
-        scale: 0.6;
+        scale: 0.1;
+        opacity: 0;
+        transform: translateX(0) translateY(77%);
       }
     }
 
@@ -74,7 +76,9 @@
       height: 100%;
 
       img {
-        scale: 0.6;
+        scale: 0.1;
+        opacity: 0;
+        transform: translateX(0) translateY(77%);
       }
     }
 
@@ -86,7 +90,9 @@
       height: 100%;
 
       img {
-        scale: 0.6;
+        scale: 0.1;
+        opacity: 0;
+        transform: translateX(0) translateY(77%);
       }
     }
 
@@ -98,7 +104,9 @@
       height: 100%;
 
       img {
-        scale: 0.6;
+        scale: 0.1;
+        opacity: 0;
+        transform: translateX(0) translateY(77%);
       }
     }
 
@@ -110,7 +118,9 @@
       height: 100%;
 
       img {
-        scale: 0.6;
+        scale: 0.1;
+        opacity: 0;
+        transform: translateX(0) translateY(77%);
       }
     }
 
@@ -122,7 +132,9 @@
       height: 100%;
 
       img {
-        scale: 0.6;
+        scale: 0.1;
+        opacity: 0;
+        transform: translateX(0) translateY(77%);
       }
     }
 

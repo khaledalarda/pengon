@@ -57,6 +57,26 @@ scene1Timeline
     },
     0
   )
+  .to(
+    ".scene1 .layer-bank",
+    {
+      opacity: 1,
+      duration: 2,
+      transform: "translate(0, 0)",
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene1 .layer-flower img",
+    {
+      opacity: 1,
+      transform: "translate(0, 0) scale(0.6)",
+      duration: 2,
+      ease: "power2.out",
+    },
+    ">"
+  )
   .addLabel("before-trash")
   .to(
     ".scene1 .layer-smoke",
@@ -111,7 +131,7 @@ scene1Timeline
       top: "45%",
       ease: "power2.out",
     },
-    ">"
+    "<"
   )
   .to(
     ".scene1 .layer-trash .wires",
@@ -124,6 +144,15 @@ scene1Timeline
         align: "#trashWiresPath",
       },
       scale: 2,
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene1 .layer-flower",
+    {
+      duration: 2.5,
+      filter: "grayscale(80%) brightness(0)",
       ease: "power2.out",
     },
     "<"
@@ -267,15 +296,6 @@ scene1Timeline
       ease: "power2.out",
     },
     ">"
-  )
-  .to(
-    ".scene1 .layer-flower",
-    {
-      duration: 2.5,
-      filter: "grayscale(80%) brightness(0)",
-      ease: "power2.out",
-    },
-    "<"
   )
   .to(
     ".scene1 .layer-all",
