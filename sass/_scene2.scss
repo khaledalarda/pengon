@@ -106,6 +106,24 @@
 
   .layer-text {
     @include parallax-layer($z-layers, 0, 0, 50vh);
+    direction: rtl;
+    font-family: "El Messiri";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 62px;
+    color: $secondary-text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > div {
+      width: 60%;
+    }
+
+    span {
+      color: $tertiary-text;
+    }
   }
 }
 
@@ -246,10 +264,10 @@
     bottom: 20%;
     color: #fff;
     text-align: center;
-    font-family: "DG Forsha Scribble";
-    font-size: 55px;
+    font-family: "El Messiri";
+    font-size: 40px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 80px;
+    font-weight: 700;
+    line-height: 52px;
   }
 }

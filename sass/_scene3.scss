@@ -90,3 +90,225 @@
     }
   }
 }
+
+.scene3-1 {
+  @include scene-base;
+
+  // Parallax layer initial states
+  .layer-bg {
+    z-index: $z-background;
+    background-image: url("../assets/scenes/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(1.6);
+  }
+
+  .layer-text {
+    @include parallax-layer($z-layers, 1, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+      margin-top: 8%;
+      width: 60%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      color: $secondary-text;
+      font-family: "El Messiri";
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 62px;
+
+      .text-1,
+      .chart {
+        opacity: 0;
+        transform: translateY(20%);
+      }
+
+      .chart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 46%;
+        }
+      }
+
+      span {
+        color: #d1a82c;
+      }
+    }
+  }
+}
+
+.scene3-2 {
+  @include scene-base;
+
+  // Parallax layer initial states
+  .layer-bg {
+    z-index: $z-background;
+    background-image: url("../assets/scenes/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(1.6);
+  }
+
+  .layer-video {
+    @include parallax-layer($z-layers, 0, 0, 10vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    video {
+      width: 60%;
+      height: 60%;
+    }
+  }
+}
+
+.scene3-3 {
+  @include scene-base;
+
+  // Parallax layer initial states
+  .layer-bg {
+    z-index: $z-background;
+    background-image: url("../assets/scenes/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(1.6);
+  }
+
+  .layer-text {
+    @include parallax-layer($z-layers, 0, 0, 10vh);
+    display: flex;
+    justify-content: center;
+
+    > div {
+      color: $secondary-text;
+      width: 45%;
+      margin-top: 5%;
+      text-align: center;
+
+      font-family: "El Messiri";
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 62px;
+
+      span {
+        color: $tertiary-text;
+      }
+    }
+  }
+
+  .layer-box {
+    @include parallax-layer($z-layers, 1, 0, 100vh);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .layer-line {
+    @include parallax-layer($z-layers, 1, 0, 100vh);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+
+    .h-line {
+      position: absolute;
+      width: 90%;
+      clip-path: inset(0 100% 0 0);
+    }
+  }
+
+  .layer-circle-0 {
+    @include parallax-layer($z-layers, 1, 35vw, 0);
+  }
+
+  .layer-circle-1 {
+    @include parallax-layer($z-layers, 1, 25vw, 10vh);
+  }
+
+  .layer-circle-2 {
+    @include parallax-layer($z-layers, 1, 12vw, 5vh);
+  }
+
+  .layer-circle-3 {
+    @include parallax-layer($z-layers, 1, 10vw, 5vh);
+  }
+
+  .layer-circle-4 {
+    @include parallax-layer($z-layers, 1, 1vw, -5vh);
+  }
+
+  .layer-circle-5 {
+    @include parallax-layer($z-layers, 1, -15vw, 0);
+  }
+
+  .layer-circle-6 {
+    @include parallax-layer($z-layers, 1, -30vw, -5vh);
+  }
+
+  .layer-circle-7 {
+    @include parallax-layer($z-layers, 1, -35vw, -10vh);
+  }
+
+  .layer-circle {
+    &:nth-child(even) {
+      .layer-circle-text {
+        transform: translateX(-25%) translateY(650%);
+      }
+
+      .v-line {
+        top: 70%;
+      }
+    }
+
+    &:nth-child(odd) {
+      .layer-circle-text {
+        transform: translateX(-24%) translateY(-337%);
+      }
+
+      .v-line {
+        top: -70%;
+      }
+    }
+
+    .v-line {
+      position: absolute;
+      left: 1%;
+      scale: 0.5;
+      width: 100%;
+      opacity: 0;
+    }
+
+    .circle {
+      z-index: 2;
+      position: relative;
+    }
+
+    .layer-circle-text {
+      color: $primary-text;
+      text-align: center;
+      font-family: "Tajawal";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 36px;
+      position: absolute;
+      width: 200%;
+      opacity: 0;
+    }
+  }
+}

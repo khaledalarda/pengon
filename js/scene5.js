@@ -110,6 +110,16 @@ scene5Timeline
       ease: "power2.out",
     },
     ">"
+  )
+  .to(
+    ".scene5 .layer-text",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateX(0) translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
   );
 
 gsap.to(".scene5 .layer-smoke", {

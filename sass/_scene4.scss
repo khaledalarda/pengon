@@ -23,19 +23,19 @@
   }
 
   .layer-body-1 {
-    @include parallax-layer($z-layers, 0, -1.5%, 0);
+    @include parallax-layer($z-layers, 0, 0, 0);
   }
 
   .layer-body-2 {
-    @include parallax-layer($z-layers, 0, 1.6%, 0);
+    @include parallax-layer($z-layers, 0, 0, 0);
   }
 
   .layer-body-3 {
-    @include parallax-layer($z-layers, 0, 2.7%, 0);
+    @include parallax-layer($z-layers, 0, 0, 0);
   }
 
   .layer-body-4 {
-    @include parallax-layer($z-layers, 0, -0.2%, 0);
+    @include parallax-layer($z-layers, 0, 0, 0);
   }
 
   .layer-trash-1,

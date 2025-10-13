@@ -4,6 +4,7 @@
 
 .scene1 {
   @include scene-base;
+  position: relative;
 
   // Parallax layer initial states
   .layer-bg {
@@ -31,143 +32,276 @@
     background: black;
   }
 
-  // Parallax layers with consistent structure
-  .layer-bank {
-    @include parallax-layer($z-layers, 0, 0, 50vh);
-    transform: rotate(-20deg) scale(1.2);
-    left: 0%;
-    top: 50vh;
+  .layer-all {
+    z-index: $z-layers;
+    position: absolute;
+    transform: rotate(-10.165deg);
     width: 100%;
-    height: 140%;
+    height: 100%;
+    left: -7%;
+    top: 9%;
+    scale: 1.5;
+
+    .layer-bank {
+      @include parallax-layer(11, 1, 0, 0);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .layer-flower-1 {
+      position: absolute;
+      top: 58%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        scale: 0.6;
+      }
+    }
+
+    .layer-flower-2 {
+      position: absolute;
+      top: 59.5%;
+      left: -3%;
+      width: 100%;
+      height: 100%;
+
+      img {
+        scale: 0.6;
+      }
+    }
+
+    .layer-flower-3 {
+      position: absolute;
+      top: 54%;
+      left: 2%;
+      width: 100%;
+      height: 100%;
+
+      img {
+        scale: 0.6;
+      }
+    }
+
+    .layer-flower-4 {
+      position: absolute;
+      top: 67%;
+      left: -6%;
+      width: 100%;
+      height: 100%;
+
+      img {
+        scale: 0.6;
+      }
+    }
+
+    .layer-flower-5 {
+      position: absolute;
+      top: 52%;
+      left: -1%;
+      width: 100%;
+      height: 100%;
+
+      img {
+        scale: 0.6;
+      }
+    }
+
+    .layer-flower-6 {
+      position: absolute;
+      top: 47%;
+      left: -3%;
+      width: 100%;
+      height: 100%;
+
+      img {
+        scale: 0.6;
+      }
+    }
+
+    .layer-trash {
+      @include parallax-layer($z-layers, 1, 0, 0);
+      .layer-truck-container {
+        scale: 0.6;
+        position: absolute;
+
+        .truck-trash-container {
+          position: absolute;
+          top: 0%;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .truck-trash {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+
+        .colored-bags {
+          top: -38%;
+          scale: 0.3;
+          left: 30%;
+        }
+
+        .electronics {
+          top: -38%;
+          scale: 0.3;
+          left: 17%;
+        }
+
+        .blood {
+          top: -37%;
+          scale: 0.3;
+          left: 6%;
+        }
+
+        .barrel-1 {
+          top: -25%;
+          scale: 0.2;
+          left: 38%;
+        }
+
+        .barrel-2 {
+          z-index: 1;
+          top: -42%;
+          scale: 0.2;
+          left: 9%;
+        }
+
+        .bg {
+          top: -25%;
+          scale: 0.6;
+          left: 17%;
+        }
+
+        .bg1 {
+          top: -25%;
+          scale: 0.5;
+          left: 17%;
+        }
+
+        .bg2 {
+          top: -25%;
+          scale: 0.5;
+          left: 30%;
+        }
+
+        .squeezer {
+          top: -25%;
+          scale: 0.3;
+          left: 23%;
+        }
+
+        .wires {
+          top: -7%;
+          scale: 1;
+          left: 26%;
+          rotate: 97deg;
+        }
+      }
+    }
+
+    .layer-truck {
+      @include parallax-layer($z-truck, 1, 0, 0);
+      .layer-truck-container {
+        scale: 0.6;
+        position: absolute;
+
+        .truck-trash-container {
+          position: absolute;
+          top: 0%;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .truck-bag {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
   }
 
   .layer-map {
     @include parallax-layer($z-map, 0, 0, 0);
-    transform: translateX(0) translateY(0) rotate(5deg) scale(5);
-    width: 100%;
-    height: 84%;
-    left: -18%;
-    top: 15%;
+    transform: translateX(0) translateY(0) rotate(-1deg) scale(5);
+    width: 74%;
+    height: 65%;
+    left: 12%;
+    top: 23%;
   }
 
   .layer-text {
     @include parallax-layer($z-layers, 0, 0, 0);
+    color: $secondary-text;
+    direction: rtl;
+    font-family: "El Messiri";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 62px;
+
+    span {
+      color: $tertiary-text;
+    }
 
     > div {
       position: absolute;
       bottom: 10%;
-      right: 20%;
+      right: 10%;
       text-align: right;
     }
   }
 
-  .layer-flowers {
-    @include parallax-layer($z-flowers, 0, 0, 0);
-    // Initial state for scaling animation
-    transform: scale(0.3);
-    width: 89%;
-    height: 87%;
-    top: 120px;
-    left: -10%;
-  }
-
   .layer-smoke {
     @include parallax-layer($z-smoke, 0, 0, -50vh);
+    width: 140%;
+    height: 100%;
+    left: -40%;
   }
 
-  .layer-squeezer {
-    @include parallax-layer($z-squeezer, 0, 0, 0);
-    position: absolute;
-    left: -6%;
-    scale: 0;
-  }
-
-  .layer-trash {
-    @include parallax-layer($z-trash, 1, 0, 0);
-    .layer-truck-container {
-      scale: 0.2;
-      transform: scaleX(-1);
-      position: absolute;
-
-      .truck-trash-container {
-        position: absolute;
-        top: -7%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .truck-trash {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
-
-      .trash-bg {
-        transform: scaleX(-1) rotate(-28deg);
-        scale: 1.4;
-        left: -30%;
-        top: -47%;
-      }
-
-      .trash-bg2 {
-        transform: scaleX(-1) rotate(-28deg);
-        scale: 1.4;
-        left: -30%;
-        top: -47%;
-      }
-
-      .trash-wires {
-        transform: scaleX(-1) rotate(-91deg);
-        scale: 1.4;
-        left: -9%;
-        top: -56%;
-      }
-
-      .trash-barrel {
-        transform: scaleX(-1);
-        scale: 1.5;
-        left: -45%;
-      }
-
-      .trash-blood {
-        transform: scaleX(-1);
-        left: -6%;
-        top: -27%;
-      }
-
-      .trash-electronics {
-        transform: scaleX(-1);
-        top: -70%;
-        left: -50%;
-      }
-    }
-  }
-
-  .layer-truck {
-    @include parallax-layer($z-truck, 1, 0, 0);
-    .layer-truck-container {
-      scale: 0.2;
-      transform: scaleX(-1);
-      position: absolute;
-
-      .truck-trash-container {
-        position: absolute;
-        top: -7%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .truck-bag {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
-    }
+  .layer-truck-path {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: auto;
   }
 
   .truck-path {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: auto;
+  }
+
+  .layer-trash-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: auto;
+  }
+
+  .trash-path {
     position: absolute;
     top: 0;
     left: 0;

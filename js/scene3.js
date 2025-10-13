@@ -56,15 +56,6 @@ scene3Timeline
     ".scene3 .layer-truck-container",
     {
       duration: 3,
-      transform: "translateX(0) translateY(-10%)",
-      ease: "power2.out",
-    },
-    ">"
-  )
-  .to(
-    ".scene3 .layer-truck-container",
-    {
-      duration: 3,
       transform: "translateX(0) translateY(-10%) rotate(-5deg)",
       ease: "power2.out",
     },
@@ -164,15 +155,6 @@ scene3Timeline
     ".scene3 .layer-truck-container",
     {
       duration: 4,
-      transform: "translateX(0) translateY(-10%) rotate(0deg)",
-      ease: "power2.out",
-    },
-    "<"
-  )
-  .to(
-    ".scene3 .layer-truck-container",
-    {
-      duration: 4,
       transform: "translate(0, 0) scale(1)",
       ease: "power2.out",
     },
@@ -184,6 +166,151 @@ scene3Timeline
       duration: 6,
       scale: 0.9,
       transform: "translateX(95%) translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  );
+
+// Scene3-1-specific animations and parallax effects
+const scene3_1 = document.querySelector(".scene3-1");
+
+// // Create a timeline for the entire scene animation
+const scene3_1Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene3_1,
+    scrub: 0.3,
+    pin: true,
+  },
+});
+
+scene3_1Timeline
+  .to(
+    ".scene3-1 .layer-text .text-1",
+    {
+      duration: 1,
+      transform: "translateX(0) translateY(0)",
+      opacity: 1,
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene3-1 .layer-text .chart",
+    {
+      duration: 1,
+      transform: "translateX(0) translateY(0)",
+      opacity: 1,
+      ease: "power2.out",
+    },
+    ">"
+  );
+
+// Scene2-specific animations and parallax effects
+const scene3_2 = document.querySelector(".scene3-2");
+
+// // Create a timeline for the entire scene animation
+const scene3_2Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene3_2,
+    scrub: 0.3,
+    pin: true,
+  },
+});
+
+scene3_2Timeline.to(
+  ".scene3-2 .layer-video",
+  {
+    duration: 1,
+    transform: "translateX(0) translateY(0)",
+    opacity: 1,
+    ease: "power2.out",
+  },
+  0
+);
+
+// Scene2-specific animations and parallax effects
+const scene3_3 = document.querySelector(".scene3-3");
+
+// // Create a timeline for the entire scene animation
+const scene3_3Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene3_3,
+    scrub: 0.3,
+    pin: true,
+  },
+});
+
+scene3_3Timeline
+  .to(
+    ".scene3-3 .layer-text",
+    {
+      duration: 1,
+      transform: "translateX(0) translateY(0)",
+      opacity: 1,
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene3-3 .layer-box",
+    {
+      duration: 1,
+      transform: "translateX(0) translateY(0)",
+      opacity: 1,
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene3-3 .layer-line",
+    {
+      duration: 3,
+      transform: "translateX(0) translateY(2vh)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene3-3 .layer-circle",
+    {
+      duration: 1,
+      transform: "translateX(0) translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene3-3 .layer-line",
+    {
+      duration: 2,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene3-3 .layer-line > img",
+    {
+      duration: 2,
+      clipPath: "inset(0 0% 0 0)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene3-3 .layer-line .v-line",
+    {
+      duration: 2,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene3-3 .layer-line .layer-circle-text",
+    {
+      duration: 2,
+      opacity: 1,
       ease: "power2.out",
     },
     ">"

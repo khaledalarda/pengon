@@ -153,6 +153,7 @@ body {
 .scene1 {
   position: relative;
   overflow: hidden;
+  position: relative;
 }
 .scene1 .layer-bg {
   z-index: 1;
@@ -175,138 +176,249 @@ body {
   opacity: 0.7;
   background: black;
 }
-.scene1 .layer-bank {
+.scene1 .layer-all {
   z-index: 10;
-  opacity: 0;
-  transform: translateX(0) translateY(50vh);
-  transform: rotate(-20deg) scale(1.2);
-  left: 0%;
-  top: 50vh;
+  position: absolute;
+  transform: rotate(-10.165deg);
   width: 100%;
-  height: 140%;
+  height: 100%;
+  left: -7%;
+  top: 9%;
+  scale: 1.5;
+}
+.scene1 .layer-all .layer-bank {
+  z-index: 11;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-bank img {
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-flower-1 {
+  position: absolute;
+  top: 58%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-flower-1 img {
+  scale: 0.6;
+}
+.scene1 .layer-all .layer-flower-2 {
+  position: absolute;
+  top: 59.5%;
+  left: -3%;
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-flower-2 img {
+  scale: 0.6;
+}
+.scene1 .layer-all .layer-flower-3 {
+  position: absolute;
+  top: 54%;
+  left: 2%;
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-flower-3 img {
+  scale: 0.6;
+}
+.scene1 .layer-all .layer-flower-4 {
+  position: absolute;
+  top: 67%;
+  left: -6%;
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-flower-4 img {
+  scale: 0.6;
+}
+.scene1 .layer-all .layer-flower-5 {
+  position: absolute;
+  top: 52%;
+  left: -1%;
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-flower-5 img {
+  scale: 0.6;
+}
+.scene1 .layer-all .layer-flower-6 {
+  position: absolute;
+  top: 47%;
+  left: -3%;
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-flower-6 img {
+  scale: 0.6;
+}
+.scene1 .layer-all .layer-trash {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+.scene1 .layer-all .layer-trash .layer-truck-container {
+  scale: 0.6;
+  position: absolute;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .truck-trash-container {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .truck-trash {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .colored-bags {
+  top: -38%;
+  scale: 0.3;
+  left: 30%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .electronics {
+  top: -38%;
+  scale: 0.3;
+  left: 17%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .blood {
+  top: -37%;
+  scale: 0.3;
+  left: 6%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .barrel-1 {
+  top: -25%;
+  scale: 0.2;
+  left: 38%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .barrel-2 {
+  z-index: 1;
+  top: -42%;
+  scale: 0.2;
+  left: 9%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .bg {
+  top: -25%;
+  scale: 0.6;
+  left: 17%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .bg1 {
+  top: -25%;
+  scale: 0.5;
+  left: 17%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .bg2 {
+  top: -25%;
+  scale: 0.5;
+  left: 30%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .squeezer {
+  top: -25%;
+  scale: 0.3;
+  left: 23%;
+}
+.scene1 .layer-all .layer-trash .layer-truck-container .wires {
+  top: -7%;
+  scale: 1;
+  left: 26%;
+  rotate: 97deg;
+}
+.scene1 .layer-all .layer-truck {
+  z-index: 12;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+.scene1 .layer-all .layer-truck .layer-truck-container {
+  scale: 0.6;
+  position: absolute;
+}
+.scene1 .layer-all .layer-truck .layer-truck-container .truck-trash-container {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.scene1 .layer-all .layer-truck .layer-truck-container .truck-bag {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 .scene1 .layer-map {
   z-index: 13;
   opacity: 0;
   transform: translateX(0) translateY(0);
-  transform: translateX(0) translateY(0) rotate(5deg) scale(5);
-  width: 100%;
-  height: 84%;
-  left: -18%;
-  top: 15%;
+  transform: translateX(0) translateY(0) rotate(-1deg) scale(5);
+  width: 74%;
+  height: 65%;
+  left: 12%;
+  top: 23%;
 }
 .scene1 .layer-text {
   z-index: 10;
   opacity: 0;
   transform: translateX(0) translateY(0);
+  color: #c84a23;
+  direction: rtl;
+  font-family: "El Messiri";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 62px;
+}
+.scene1 .layer-text span {
+  color: #d1a82c;
 }
 .scene1 .layer-text > div {
   position: absolute;
   bottom: 10%;
-  right: 20%;
+  right: 10%;
   text-align: right;
-}
-.scene1 .layer-flowers {
-  z-index: 7;
-  opacity: 0;
-  transform: translateX(0) translateY(0);
-  transform: scale(0.3);
-  width: 89%;
-  height: 87%;
-  top: 120px;
-  left: -10%;
 }
 .scene1 .layer-smoke {
   z-index: 6;
   opacity: 0;
   transform: translateX(0) translateY(-50vh);
+  width: 140%;
+  height: 100%;
+  left: -40%;
 }
-.scene1 .layer-squeezer {
-  z-index: 7;
-  opacity: 0;
-  transform: translateX(0) translateY(0);
-  position: absolute;
-  left: -6%;
-  scale: 0;
-}
-.scene1 .layer-trash {
-  z-index: 8;
-  opacity: 1;
-  transform: translateX(0) translateY(0);
-}
-.scene1 .layer-trash .layer-truck-container {
-  scale: 0.2;
-  transform: scaleX(-1);
-  position: absolute;
-}
-.scene1 .layer-trash .layer-truck-container .truck-trash-container {
-  position: absolute;
-  top: -7%;
+.scene1 .layer-truck-path {
+  position: relative;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-}
-.scene1 .layer-trash .layer-truck-container .truck-trash {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.scene1 .layer-trash .layer-truck-container .trash-bg {
-  transform: scaleX(-1) rotate(-28deg);
-  scale: 1.4;
-  left: -30%;
-  top: -47%;
-}
-.scene1 .layer-trash .layer-truck-container .trash-bg2 {
-  transform: scaleX(-1) rotate(-28deg);
-  scale: 1.4;
-  left: -30%;
-  top: -47%;
-}
-.scene1 .layer-trash .layer-truck-container .trash-wires {
-  transform: scaleX(-1) rotate(-91deg);
-  scale: 1.4;
-  left: -9%;
-  top: -56%;
-}
-.scene1 .layer-trash .layer-truck-container .trash-barrel {
-  transform: scaleX(-1);
-  scale: 1.5;
-  left: -45%;
-}
-.scene1 .layer-trash .layer-truck-container .trash-blood {
-  transform: scaleX(-1);
-  left: -6%;
-  top: -27%;
-}
-.scene1 .layer-trash .layer-truck-container .trash-electronics {
-  transform: scaleX(-1);
-  top: -70%;
-  left: -50%;
-}
-.scene1 .layer-truck {
-  z-index: 12;
-  opacity: 1;
-  transform: translateX(0) translateY(0);
-}
-.scene1 .layer-truck .layer-truck-container {
-  scale: 0.2;
-  transform: scaleX(-1);
-  position: absolute;
-}
-.scene1 .layer-truck .layer-truck-container .truck-trash-container {
-  position: absolute;
-  top: -7%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.scene1 .layer-truck .layer-truck-container .truck-bag {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  z-index: 100;
+  pointer-events: auto;
 }
 .scene1 .truck-path {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: auto;
+}
+.scene1 .layer-trash-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: auto;
+}
+.scene1 .trash-path {
   position: absolute;
   top: 0;
   left: 0;
@@ -429,6 +541,22 @@ body {
   z-index: 10;
   opacity: 0;
   transform: translateX(0) translateY(50vh);
+  direction: rtl;
+  font-family: "El Messiri";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 62px;
+  color: #c84a23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene2-1 .layer-text > div {
+  width: 60%;
+}
+.scene2-1 .layer-text span {
+  color: #d1a82c;
 }
 
 .scene2-2 {
@@ -566,11 +694,11 @@ body {
   bottom: 20%;
   color: #fff;
   text-align: center;
-  font-family: "DG Forsha Scribble";
-  font-size: 55px;
+  font-family: "El Messiri";
+  font-size: 40px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 80px;
+  font-weight: 700;
+  line-height: 52px;
 }
 
 .scene3 {
@@ -660,6 +788,215 @@ body {
   text-align: center;
 }
 
+.scene3-1 {
+  position: relative;
+  overflow: hidden;
+}
+.scene3-1 .layer-bg {
+  z-index: 1;
+  background-image: url("../assets/scenes/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(1.6);
+}
+.scene3-1 .layer-text {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene3-1 .layer-text .container {
+  margin-top: 8%;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  color: #c84a23;
+  font-family: "El Messiri";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 62px;
+}
+.scene3-1 .layer-text .container .text-1,
+.scene3-1 .layer-text .container .chart {
+  opacity: 0;
+  transform: translateY(20%);
+}
+.scene3-1 .layer-text .container .chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene3-1 .layer-text .container .chart img {
+  width: 46%;
+}
+.scene3-1 .layer-text .container span {
+  color: #d1a82c;
+}
+
+.scene3-2 {
+  position: relative;
+  overflow: hidden;
+}
+.scene3-2 .layer-bg {
+  z-index: 1;
+  background-image: url("../assets/scenes/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(1.6);
+}
+.scene3-2 .layer-video {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(10vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene3-2 .layer-video video {
+  width: 60%;
+  height: 60%;
+}
+
+.scene3-3 {
+  position: relative;
+  overflow: hidden;
+}
+.scene3-3 .layer-bg {
+  z-index: 1;
+  background-image: url("../assets/scenes/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(1.6);
+}
+.scene3-3 .layer-text {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(10vh);
+  display: flex;
+  justify-content: center;
+}
+.scene3-3 .layer-text > div {
+  color: #c84a23;
+  width: 45%;
+  margin-top: 5%;
+  text-align: center;
+  font-family: "El Messiri";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 62px;
+}
+.scene3-3 .layer-text > div span {
+  color: #d1a82c;
+}
+.scene3-3 .layer-box {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) translateY(100vh);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.scene3-3 .layer-line {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) translateY(100vh);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+}
+.scene3-3 .layer-line .h-line {
+  position: absolute;
+  width: 90%;
+  clip-path: inset(0 100% 0 0);
+}
+.scene3-3 .layer-circle-0 {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(35vw) translateY(0);
+}
+.scene3-3 .layer-circle-1 {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(25vw) translateY(10vh);
+}
+.scene3-3 .layer-circle-2 {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(12vw) translateY(5vh);
+}
+.scene3-3 .layer-circle-3 {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(10vw) translateY(5vh);
+}
+.scene3-3 .layer-circle-4 {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(1vw) translateY(-5vh);
+}
+.scene3-3 .layer-circle-5 {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(-15vw) translateY(0);
+}
+.scene3-3 .layer-circle-6 {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(-30vw) translateY(-5vh);
+}
+.scene3-3 .layer-circle-7 {
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(-35vw) translateY(-10vh);
+}
+.scene3-3 .layer-circle:nth-child(even) .layer-circle-text {
+  transform: translateX(-25%) translateY(650%);
+}
+.scene3-3 .layer-circle:nth-child(even) .v-line {
+  top: 70%;
+}
+.scene3-3 .layer-circle:nth-child(odd) .layer-circle-text {
+  transform: translateX(-24%) translateY(-337%);
+}
+.scene3-3 .layer-circle:nth-child(odd) .v-line {
+  top: -70%;
+}
+.scene3-3 .layer-circle .v-line {
+  position: absolute;
+  left: 1%;
+  scale: 0.5;
+  width: 100%;
+  opacity: 0;
+}
+.scene3-3 .layer-circle .circle {
+  z-index: 2;
+  position: relative;
+}
+.scene3-3 .layer-circle .layer-circle-text {
+  color: #e3d7c5;
+  text-align: center;
+  font-family: "Tajawal";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+  position: absolute;
+  width: 200%;
+  opacity: 0;
+}
+
 .scene4 {
   position: relative;
   overflow: hidden;
@@ -684,22 +1021,22 @@ body {
 .scene4 .layer-body-1 {
   z-index: 10;
   opacity: 0;
-  transform: translateX(-1.5%) translateY(0);
+  transform: translateX(0) translateY(0);
 }
 .scene4 .layer-body-2 {
   z-index: 10;
   opacity: 0;
-  transform: translateX(1.6%) translateY(0);
+  transform: translateX(0) translateY(0);
 }
 .scene4 .layer-body-3 {
   z-index: 10;
   opacity: 0;
-  transform: translateX(2.7%) translateY(0);
+  transform: translateX(0) translateY(0);
 }
 .scene4 .layer-body-4 {
   z-index: 10;
   opacity: 0;
-  transform: translateX(-0.2%) translateY(0);
+  transform: translateX(0) translateY(0);
 }
 .scene4 .layer-trash-1,
 .scene4 .layer-trash-3,
@@ -812,6 +1149,22 @@ body {
   z-index: 10;
   opacity: 0;
   transform: translateX(0) translateY(0);
+}
+.scene5 .layer-text {
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(0) translateY(5vh);
+  color: #e3d7c5;
+  font-family: "El Messiri";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 62px;
+}
+.scene5 .layer-text div {
+  right: 6%;
+  bottom: 15%;
+  position: absolute;
 }
 
 .scene6 {

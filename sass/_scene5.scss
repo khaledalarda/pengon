@@ -68,4 +68,20 @@
   .layer-trash {
     @include parallax-layer($z-layers, 0, 0, 0);
   }
+
+  .layer-text {
+    @include parallax-layer($z-layers, 0, 0, 5vh);
+    color: $primary-text;
+    font-family: "El Messiri";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 62px;
+
+    div {
+      right: 6%;
+      bottom: 15%;
+      position: absolute;
+    }
+  }
 }
