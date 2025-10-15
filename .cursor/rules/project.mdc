@@ -1,0 +1,45 @@
+---
+alwaysApply: true
+---
+# Cursor Rules for Pengon Project
+
+## Code Style Preferences
+
+### Comments
+- Do not add comments when writing code unless explicitly requested
+- Code should be self-documenting through clear naming and structure
+- Only add comments for complex algorithms or non-obvious business logic when necessary
+
+## Project Standards
+
+### Technology Stack
+- HTML5 for markup
+- SCSS for styling (compiled to CSS)
+- Vanilla JavaScript with GSAP for animations
+- No framework dependencies
+
+### SCSS/CSS
+- Use existing variables from `_variables.scss` for colors, fonts, and other design tokens
+- Never hard-code colors or fonts
+- Follow BEM-like naming conventions for classes
+- Use mixins from `_mixins.scss` when applicable
+
+### File Organization
+- Keep scene-specific styles in separate `_sceneN.scss` files
+- Keep scene-specific JavaScript in separate `sceneN.js` files
+- Sub-scenes (e.g., scene2-1, scene2-2) should remain in the parent scene's SCSS and JS files (scene2.scss, scene2.js)
+- Update both `/sass` source files and compile to `/styles`
+- Assets should be organized in `/assets` directory
+
+### Figma Integration
+- When implementing from Figma designs, match specifications exactly
+- Extract and use design tokens (colors, typography, spacing)
+- Update variables file if new design tokens are introduced
+- Always compile SCSS after changes using `npm run sass:build`
+
+### Code Quality
+- Write clean, readable code without unnecessary comments
+- Use meaningful variable and function names
+- Follow existing patterns in the codebase
+- Test changes after implementation
+

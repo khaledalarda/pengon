@@ -62,3 +62,4 @@ temp/
 # Build outputs
 dist/
 build/
+styles/
