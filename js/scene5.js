@@ -268,16 +268,66 @@ const scene5_4Timeline = gsap.timeline({
   },
 });
 
-scene5_4Timeline.to(
-  ".scene5-4 .layer-text",
-  {
-    duration: 2,
-    opacity: 1,
-    transform: "translateY(0)",
-    ease: "power2.out",
-  },
-  0
-);
+scene5_4Timeline
+  .to(
+    ".scene5-4 .heading",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene5-4 .paragraph-1",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene5-4 .source-citation",
+    {
+      duration: 0.8,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    "<+=0.3"
+  )
+  .to(
+    ".scene5-4 .paragraph-2",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene5-4 .paragraph-3",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene5-4 .quote-text",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  );
 
 const scene5_5 = document.querySelector(".scene5-5");
 
@@ -289,16 +339,37 @@ const scene5_5Timeline = gsap.timeline({
   },
 });
 
-scene5_5Timeline.to(
-  ".scene5-5 .layer-text",
-  {
-    duration: 2,
-    opacity: 1,
-    transform: "translateY(0)",
-    ease: "power2.out",
-  },
-  0
-);
+scene5_5Timeline
+  .to(
+    ".scene5-5 .heading",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene5-5 .text-content",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    "<+=0.5"
+  )
+  .to(
+    ".scene5-5 .video-container",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    "<+=0.5"
+  );
 
 const scene5_6 = document.querySelector(".scene5-6");
 
@@ -311,32 +382,11 @@ const scene5_6Timeline = gsap.timeline({
 });
 
 scene5_6Timeline.to(
-  ".scene5-6 .layer-text",
+  ".scene5-6 .layer-video",
   {
-    duration: 2,
+    duration: 1,
+    transform: "translateX(0) translateY(0)",
     opacity: 1,
-    transform: "translateY(0)",
-    ease: "power2.out",
-  },
-  0
-);
-
-const scene5_7 = document.querySelector(".scene5-7");
-
-const scene5_7Timeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: scene5_7,
-    scrub: 0.3,
-    pin: true,
-  },
-});
-
-scene5_7Timeline.to(
-  ".scene5-7 .layer-text",
-  {
-    duration: 2,
-    opacity: 1,
-    transform: "translateY(0)",
     ease: "power2.out",
   },
   0

@@ -73,7 +73,7 @@
     @include parallax-layer($z-layers, 0, 0, 5vh);
     color: $primary-text;
     font-family: "El Messiri";
-    font-size: 48px;
+    font-size: 72px;
     font-style: normal;
     font-weight: 700;
     line-height: 62px;
@@ -529,95 +529,275 @@
   }
 }
 
-
 .scene5-4 {
   @include scene-base;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+  position: relative;
+  overflow: hidden;
 
-  .layer-text {
-    @include parallax-layer($z-layers, 0, 0, 10vh);
-    direction: rtl;
-    color: $primary-text;
-    font-family: "El Messiri";
-    font-size: 48px;
-    font-style: normal;
+  .content-wrapper {
+    position: relative;
+    z-index: $z-layers;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 10%;
+    gap: 3vh;
+  }
+
+  .content-top {
+    width: 100%;
+    max-width: 1058px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .heading {
+    font-family: $font-el-messiri;
     font-weight: 700;
-    line-height: 62px;
+    font-size: 32px;
+    line-height: 56px;
+    color: $secondary-text;
+    text-align: justify;
+    direction: rtl;
+    margin: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .paragraph-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .paragraph {
+    font-family: $font-tajawal;
+    font-weight: 500;
+    text-align: justify;
+    direction: rtl;
+    margin: 0;
+    width: 100%;
+    max-width: 1058px;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .paragraph-1 {
+    font-size: 24px;
+    line-height: 36px;
+    color: $primary-text;
+  }
+
+  .paragraph-2,
+  .paragraph-3 {
+    font-size: 24px;
+    line-height: 36px;
+    color: $primary-text;
+  }
+
+  .source-citation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row-reverse;
+    opacity: 0;
+  }
+
+  .eye-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .source-text {
+    font-family: $font-tajawal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: $tertiary-text;
     text-align: center;
-    width: 80%;
-    max-width: 1200px;
+    white-space: pre;
+    direction: rtl;
+  }
+
+  .quote-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    max-width: 1058px;
+  }
+
+  .quote-text {
+    font-family: $font-tajawal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: $primary-text;
+    text-align: center;
+    direction: rtl;
+    margin: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
   }
 }
 
 .scene5-5 {
   @include scene-base;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+  position: relative;
+  overflow: hidden;
 
-  .layer-text {
-    @include parallax-layer($z-layers, 0, 0, 10vh);
-    direction: rtl;
-    color: $primary-text;
-    font-family: "El Messiri";
-    font-size: 48px;
-    font-style: normal;
+  .layer-bg {
+    z-index: $z-background;
+    background-image: url("../assets/images/bg.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .content-wrapper {
+    position: relative;
+    z-index: $z-layers;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5% 16.667%;
+    box-sizing: border-box;
+  }
+
+  .heading {
+    font-family: $font-el-messiri;
     font-weight: 700;
-    line-height: 62px;
-    text-align: center;
-    width: 80%;
-    max-width: 1200px;
+    font-size: 85px;
+    line-height: 104px;
+    color: $secondary-text;
+    text-align: justify;
+    direction: rtl;
+    margin: 0;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1058px;
+    margin-bottom: 48px;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .description-text {
+    font-family: $font-tajawal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $primary-text;
+    text-align: justify;
+    direction: rtl;
+    margin: 0;
+  }
+
+  .layer-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    width: 70%;
+    transform: translateY(30px);
+
+    video {
+      width: 100%;
+      height: 100%;
+      max-height: 500px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      width: 115%;
+      height: 112%;
+      transform: translate(-51%, -52%);
+      pointer-events: none;
+    }
   }
 }
 
 .scene5-6 {
   @include scene-base;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
 
-  .layer-text {
-    @include parallax-layer($z-layers, 0, 0, 10vh);
-    direction: rtl;
-    color: $primary-text;
-    font-family: "El Messiri";
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 62px;
-    text-align: center;
-    width: 80%;
-    max-width: 1200px;
+  .layer-bg {
+    @include parallax-layer($z-layers, 0.1, 0, 0);
+    background-image: url("../assets/images/latsheh.png");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
   }
-}
 
-.scene5-7 {
-  @include scene-base;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+  .layer-video {
+    @include parallax-layer($z-layers, 0.6, 0, 10vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  .layer-text {
-    @include parallax-layer($z-layers, 0, 0, 10vh);
-    direction: rtl;
-    color: $primary-text;
-    font-family: "El Messiri";
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 62px;
-    text-align: center;
-    width: 80%;
-    max-width: 1200px;
+    .video-container {
+      margin-top: 20px;
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      video {
+        width: 70%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+      }
+
+      .video-frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        width: 85%;
+        height: 112%;
+        transform: translate(-51%, -52%);
+        pointer-events: none;
+      }
+    }
   }
 }
