@@ -25,4 +25,24 @@
     @include parallax-layer($z-layers, 1, 0, 50vh);
     scale: 5;
   }
+
+  .layer-text {
+    @include parallax-layer($z-layers, 0, 0, 5vh);
+
+    > div {
+      position: absolute;
+      bottom: 8%;
+      right: 8%;
+
+      h2 {
+        margin: 0;
+        text-align: right;
+        color: $primary-text;
+        font-family: "El Messiri";
+        font-size: 85px;
+        font-weight: 700;
+        line-height: 104px;
+      }
+    }
+  }
 }

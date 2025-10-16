@@ -42,13 +42,24 @@ gsap.to(".scene9 .layer-smoke", {
   delay: 1.5,
 });
 
-scene9Timeline.to(
-  ".scene9 .layer-tree",
-  {
-    duration: 1,
-    opacity: 1,
-    transform: "translateX(0) translateY(0) scale(1)",
-    ease: "power2.out",
-  },
-  ">"
-);
+scene9Timeline
+  .to(
+    ".scene9 .layer-tree",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateX(0) translateY(0) scale(1)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene9 .layer-text",
+    {
+      duration: 3,
+      transform: "translateX(0) translateY(0)",
+      opacity: 1,
+      ease: "power2.out",
+    },
+    ">"
+  );
