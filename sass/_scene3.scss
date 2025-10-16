@@ -277,7 +277,7 @@
 
     > div {
       color: $secondary-text;
-      width: 45%;
+      width: 67%;
       margin-top: 5%;
       text-align: center;
 
@@ -298,6 +298,13 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+
+    .trash-can-icon {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
   }
 
   .layer-line {

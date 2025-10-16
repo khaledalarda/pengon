@@ -22,7 +22,7 @@
   }
 
   .layer-city {
-    @include parallax-layer($z-layers, 0, 0, 0);
+    @include parallax-layer($z-layers, 0.5, 0, 10vh);
   }
 
   .layer-colored-bags {

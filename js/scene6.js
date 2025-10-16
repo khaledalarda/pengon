@@ -35,11 +35,10 @@ scene6Timeline
 
 gsap.to(".scene6 .layer-smoke", {
   x: "10%",
-  duration: 4,
-  ease: "power2.out",
-  yoyo: true,
+  duration: 8,
+  ease: "linear",
   repeat: -1,
-  delay: 1,
+  delay: 1.5,
 });
 
 scene6Timeline

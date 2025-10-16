@@ -70,4 +70,134 @@
     bottom: -70%;
     right: -40%;
   }
+
+  .layer-text {
+    @include parallax-layer(12, 0, 0, 2vh);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;
+
+    font-family: "El Messiri";
+    font-size: 85px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 104px;
+    text-align: justify;
+    white-space: nowrap;
+    direction: rtl;
+
+    position: absolute;
+    left: 10%;
+    right: unset;
+    bottom: 10%;
+
+    > div:first-child {
+      color: #d1a82c;
+    }
+
+    > div:last-child {
+      color: #c84a23;
+    }
+  }
+}
+
+.scene4-1 {
+  @include scene-base;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 7%;
+    height: 100%;
+    padding: 0 12%;
+
+    .title,
+    .text-1,
+    .text-2 {
+      direction: rtl;
+    }
+
+    .title,
+    .text-1,
+    .text-2,
+    .audio-player,
+    .info {
+      opacity: 0;
+    }
+
+    .title {
+      margin-top: 10%;
+      color: $secondary-text;
+      text-align: justify;
+      font-family: "El Messiri";
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 56px;
+
+      span {
+        color: $tertiary-text;
+      }
+    }
+
+    .flex-1 {
+      flex: 1;
+      display: flex;
+      gap: 100px;
+      justify-content: space-between;
+
+      .text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15%;
+
+        .text-1 {
+          color: $primary-text;
+          text-align: justify;
+          font-family: $font-tajawal;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 36px;
+        }
+
+        .text-2 {
+          color: $primary-text;
+          text-align: right;
+          font-family: $font-tajawal;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 36px;
+        }
+      }
+    }
+  }
+}
+
+.scene4-2,
+.scene4-3,
+.scene4-4 {
+  @include scene-base;
+
+  .layer-text {
+    @include parallax-layer(12, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+
+    font-family: "El Messiri";
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: $primary-text;
+    direction: rtl;
+    padding: 5%;
+
+    > div {
+      max-width: 80%;
+    }
+  }
 }

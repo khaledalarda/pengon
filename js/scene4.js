@@ -85,4 +85,131 @@ scene4Timeline
       ease: "power2.out",
     },
     ">"
+  )
+  .to(
+    ".scene4 .layer-text",
+    {
+      duration: 2,
+      opacity: 1,
+      transform: "translateX(0) translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
   );
+
+const scene4_1 = document.querySelector(".scene4-1");
+
+const scene4_1Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene4_1,
+    scrub: 0.3,
+    pin: true,
+  },
+});
+
+scene4_1Timeline
+  .to(
+    ".scene4-1 .title",
+    {
+      duration: 2,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene4-1 .text-1",
+    {
+      duration: 2,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    "<+=1"
+  )
+  .to(
+    ".scene4-1 .text-2",
+    {
+      duration: 2,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    "<+=1"
+  )
+  .to(
+    ".scene4-1 .audio-player",
+    {
+      duration: 2,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    "<+=1"
+  )
+  .to(
+    ".scene4-1 .info",
+    {
+      duration: 2,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    "<-=3"
+  );
+
+const scene4_2 = document.querySelector(".scene4-2");
+
+const scene4_2Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene4_2,
+    scrub: 0.3,
+    pin: true,
+  },
+});
+
+scene4_2Timeline.to(
+  ".scene4-2 .layer-text",
+  {
+    duration: 2,
+    opacity: 1,
+    ease: "power2.out",
+  },
+  0
+);
+
+const scene4_3 = document.querySelector(".scene4-3");
+
+const scene4_3Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene4_3,
+    scrub: 0.3,
+    pin: true,
+  },
+});
+
+scene4_3Timeline.to(
+  ".scene4-3 .layer-text",
+  {
+    duration: 2,
+    opacity: 1,
+    ease: "power2.out",
+  },
+  0
+);
+
+const scene4_4 = document.querySelector(".scene4-4");
+
+const scene4_4Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene4_4,
+    scrub: 0.3,
+    pin: true,
+  },
+});
+
+scene4_4Timeline.to(
+  ".scene4-4 .layer-text",
+  {
+    duration: 2,
+    opacity: 1,
+    ease: "power2.out",
+  },
+  0
+);

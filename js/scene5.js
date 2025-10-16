@@ -17,6 +17,7 @@ scene5Timeline
     {
       duration: 1,
       opacity: 1,
+      transform: "translateX(0) translateY(0)",
       ease: "power2.out",
     },
     0
@@ -124,9 +125,8 @@ scene5Timeline
 
 gsap.to(".scene5 .layer-smoke", {
   x: "10%",
-  duration: 4,
-  ease: "power2.out",
-  yoyo: true,
+  duration: 8,
+  ease: "linear",
   repeat: -1,
-  delay: 1,
+  delay: 1.5,
 });

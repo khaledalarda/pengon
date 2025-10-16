@@ -1,20 +1,23 @@
 const scene1 = document.querySelector(".scene1");
 
-gsap.set([
-  ".scene1 .layer-truck .layer-truck-container",
-  ".scene1 .layer-trash .layer-truck-container",
-], {
-  scale: 0.6,
-  rotation: 0,
-  motionPath: {
-    path: "#truckPath",
-    align: "#truckPath",
-    alignOrigin: [0.5, 0.5],
-    autoRotate: true,
-    start: 0,
-    end: 0,
-  },
-});
+gsap.set(
+  [
+    ".scene1 .layer-truck .layer-truck-container",
+    ".scene1 .layer-trash .layer-truck-container",
+  ],
+  {
+    scale: 0.6,
+    rotation: 0,
+    motionPath: {
+      path: "#truckPath",
+      align: "#truckPath",
+      alignOrigin: [0.5, 0.5],
+      autoRotate: true,
+      start: 0,
+      end: 0,
+    },
+  }
+);
 
 const scene1Timeline = gsap.timeline({
   scrollTrigger: {
@@ -347,8 +350,7 @@ scene1Timeline
 gsap.to(".scene1 .layer-smoke", {
   x: "10%",
   duration: 8,
-  ease: "power2.out",
-  yoyo: true,
+  ease: "linear",
   repeat: -1,
-  delay: 1,
+  delay: 1.5,
 });

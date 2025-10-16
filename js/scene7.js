@@ -46,10 +46,9 @@ scene7Timeline
 gsap.to(".scene7 .layer-smoke", {
   x: "10%",
   duration: 8,
-  ease: "power2.out",
-  yoyo: true,
+  ease: "linear",
   repeat: -1,
-  delay: 1,
+  delay: 1.5,
 });
 
 scene7Timeline
