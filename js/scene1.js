@@ -1,7 +1,21 @@
-// Scene1-specific animations and parallax effects
 const scene1 = document.querySelector(".scene1");
 
-// Create a timeline for the entire scene animation
+gsap.set([
+  ".scene1 .layer-truck .layer-truck-container",
+  ".scene1 .layer-trash .layer-truck-container",
+], {
+  scale: 0.6,
+  rotation: 0,
+  motionPath: {
+    path: "#truckPath",
+    align: "#truckPath",
+    alignOrigin: [0.5, 0.5],
+    autoRotate: true,
+    start: 0,
+    end: 0,
+  },
+});
+
 const scene1Timeline = gsap.timeline({
   scrollTrigger: {
     trigger: scene1,
@@ -12,7 +26,6 @@ const scene1Timeline = gsap.timeline({
   },
 });
 
-// All layers start together but with different speeds
 scene1Timeline
   .to(
     ".scene1 .layer-sun",
@@ -22,7 +35,7 @@ scene1Timeline
       ease: "power2.out",
     },
     0
-  ) // All start at the same time
+  )
   .to(
     ".scene1 .sun-backdrop-layer",
     {
@@ -30,16 +43,14 @@ scene1Timeline
       duration: 2.6,
       ease: "power2.out",
       onUpdate: function () {
-        // Set display to block during animation
         gsap.set(".scene1 .sun-backdrop-layer", { display: "block" });
       },
       onComplete: function () {
-        // Only set to none when animation is fully complete
         gsap.set(".scene1 .sun-backdrop-layer", { display: "none" });
       },
     },
     0
-  ) // All start at the same time
+  )
   .to(
     ".scene1 .backdrop-layer",
     {
@@ -47,11 +58,9 @@ scene1Timeline
       duration: 1.5,
       ease: "power2.out",
       onUpdate: function () {
-        // Set display to block during animation
         gsap.set(".scene1 .backdrop-layer", { display: "block" });
       },
       onComplete: function () {
-        // Only set to none when animation is fully complete
         gsap.set(".scene1 .backdrop-layer", { display: "none" });
       },
     },
@@ -185,7 +194,7 @@ scene1Timeline
       scale: 0.3,
       ease: "power2.out",
     },
-    ">"
+    "<+=1"
   )
   .to(
     ".scene1 .layer-trash .barrel-2",
@@ -200,7 +209,7 @@ scene1Timeline
       scale: 0.3,
       ease: "power2.out",
     },
-    ">"
+    "<+=0.5"
   )
   .to(
     ".scene1 .layer-trash .bg2",
@@ -214,7 +223,7 @@ scene1Timeline
       },
       ease: "power2.out",
     },
-    ">"
+    "<+=1"
   )
   .to(
     ".scene1 .layer-trash .bg1",
@@ -228,7 +237,7 @@ scene1Timeline
       },
       ease: "power2.out",
     },
-    "<"
+    "<+=1"
   )
   .to(
     ".scene1 .layer-trash .colored-bags",
@@ -243,7 +252,7 @@ scene1Timeline
       scale: 0.4,
       ease: "power2.out",
     },
-    ">"
+    "<+=1"
   )
   .to(
     ".scene1 .layer-trash .electronics",
@@ -258,7 +267,7 @@ scene1Timeline
       scale: 0.4,
       ease: "power2.out",
     },
-    ">"
+    "<+=1"
   )
   .to(
     ".scene1 .layer-trash .blood",
@@ -273,7 +282,7 @@ scene1Timeline
       scale: 0.4,
       ease: "power2.out",
     },
-    ">"
+    "<+=1"
   )
   .to(
     ".scene1 .layer-trash .squeezer",
@@ -283,7 +292,7 @@ scene1Timeline
       top: "6%",
       ease: "power2.out",
     },
-    ">"
+    "<+=1"
   )
   .to(
     ".scene1 .layer-trash .squeezer",
@@ -295,7 +304,7 @@ scene1Timeline
       opacity: 1,
       ease: "power2.out",
     },
-    ">"
+    "<+=1"
   )
   .to(
     ".scene1 .layer-all",
@@ -332,7 +341,7 @@ scene1Timeline
       transform: "translateX(0) translateY(-10%)",
       ease: "power2.out",
     },
-    ">"
+    "<"
   );
 
 gsap.to(".scene1 .layer-smoke", {
@@ -343,5 +352,3 @@ gsap.to(".scene1 .layer-smoke", {
   repeat: -1,
   delay: 1,
 });
-
-// MotionPathHelper.create(".scene1 .layer-trash .wires");

@@ -33,19 +33,19 @@ scene3Timeline
   );
 
 gsap.to(".scene3 .layer-smoke", {
-  x: "20%",
-  duration: 4,
-  ease: "power2.out",
-  yoyo: true,
+  x: "10%",
+  duration: 8,
+  ease: "linear",
   repeat: -1,
-  delay: 1,
+  delay: 1.5,
 });
 
 scene3Timeline
   .to(
     ".scene3 .layer-truck",
     {
-      duration: 3,
+      duration: 6,
+      opacity: 1,
       scale: 0.9,
       transform: "translateX(0) translateY(0)",
       ease: "power2.out",
@@ -185,7 +185,7 @@ const scene3_1Timeline = gsap.timeline({
 
 scene3_1Timeline
   .to(
-    ".scene3-1 .layer-text .text-1",
+    [".scene3-1 .layer-text .text-1", ".scene3-1 .layer-text .text-2"],
     {
       duration: 1,
       transform: "translateX(0) translateY(0)",
@@ -197,18 +197,16 @@ scene3_1Timeline
   .to(
     ".scene3-1 .layer-text .chart",
     {
-      duration: 1,
+      duration: 2,
       transform: "translateX(0) translateY(0)",
       opacity: 1,
       ease: "power2.out",
     },
-    ">"
+    "<"
   );
 
-// Scene2-specific animations and parallax effects
 const scene3_2 = document.querySelector(".scene3-2");
 
-// // Create a timeline for the entire scene animation
 const scene3_2Timeline = gsap.timeline({
   scrollTrigger: {
     trigger: scene3_2,
@@ -217,8 +215,50 @@ const scene3_2Timeline = gsap.timeline({
   },
 });
 
-scene3_2Timeline.to(
-  ".scene3-2 .layer-video",
+scene3_2Timeline
+  .to(
+    ".scene3-2 .content-container",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene3-2 .chart-container",
+    {
+      duration: 1.5,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    0.3
+  )
+  .to(
+    ".scene3-2 .text-container",
+    {
+      duration: 1.5,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    0.5
+  );
+
+const scene3_3 = document.querySelector(".scene3-3");
+
+const scene3_3Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene3_3,
+    scrub: 0.3,
+    pin: true,
+  },
+});
+
+scene3_3Timeline.to(
+  ".scene3-3 .layer-video",
   {
     duration: 1,
     transform: "translateX(0) translateY(0)",
@@ -228,21 +268,19 @@ scene3_2Timeline.to(
   0
 );
 
-// Scene2-specific animations and parallax effects
-const scene3_3 = document.querySelector(".scene3-3");
+const scene3_4 = document.querySelector(".scene3-4");
 
-// // Create a timeline for the entire scene animation
-const scene3_3Timeline = gsap.timeline({
+const scene3_4Timeline = gsap.timeline({
   scrollTrigger: {
-    trigger: scene3_3,
+    trigger: scene3_4,
     scrub: 0.3,
     pin: true,
   },
 });
 
-scene3_3Timeline
+scene3_4Timeline
   .to(
-    ".scene3-3 .layer-text",
+    ".scene3-4 .layer-text",
     {
       duration: 1,
       transform: "translateX(0) translateY(0)",
@@ -252,7 +290,7 @@ scene3_3Timeline
     0
   )
   .to(
-    ".scene3-3 .layer-box",
+    ".scene3-4 .layer-box",
     {
       duration: 1,
       transform: "translateX(0) translateY(0)",
@@ -262,7 +300,7 @@ scene3_3Timeline
     ">"
   )
   .to(
-    ".scene3-3 .layer-line",
+    ".scene3-4 .layer-line",
     {
       duration: 3,
       transform: "translateX(0) translateY(2vh)",
@@ -271,7 +309,7 @@ scene3_3Timeline
     ">"
   )
   .to(
-    ".scene3-3 .layer-circle",
+    ".scene3-4 .layer-circle",
     {
       duration: 1,
       transform: "translateX(0) translateY(0)",
@@ -280,7 +318,7 @@ scene3_3Timeline
     ">"
   )
   .to(
-    ".scene3-3 .layer-line",
+    ".scene3-4 .layer-line",
     {
       duration: 2,
       opacity: 1,
@@ -289,7 +327,7 @@ scene3_3Timeline
     ">"
   )
   .to(
-    ".scene3-3 .layer-line > img",
+    ".scene3-4 .layer-line > img",
     {
       duration: 2,
       clipPath: "inset(0 0% 0 0)",
@@ -298,7 +336,7 @@ scene3_3Timeline
     ">"
   )
   .to(
-    ".scene3-3 .layer-line .v-line",
+    ".scene3-4 .layer-line .v-line",
     {
       duration: 2,
       opacity: 1,
@@ -307,7 +345,7 @@ scene3_3Timeline
     ">"
   )
   .to(
-    ".scene3-3 .layer-line .layer-circle-text",
+    ".scene3-4 .layer-line .layer-circle-text",
     {
       duration: 2,
       opacity: 1,

@@ -129,7 +129,7 @@ body {
   background: $primary-bg;
   color: $primary-text;
 
-  background-image: url("../assets/scenes/bg.png");
+  background-image: url("../assets/images/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -156,12 +156,4 @@ body {
     object-fit: fill;
     display: block;
   }
-}
-
-.primary-text {
-  color: $primary-text;
-}
-
-.secondary-text {
-  color: $secondary-text;
 }

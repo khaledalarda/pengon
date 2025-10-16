@@ -104,3 +104,202 @@
     }
   }
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.3s ease-in-out;
+
+  &.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: #2b1b09;
+    width: 1920px;
+    height: 1021.52px;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    animation: slideIn 0.3s ease-in-out;
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .modal-bg-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+    opacity: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .modal-close {
+    position: fixed;
+    top: calc(2.5vh + 24px);
+    left: calc(2.5vw + 24px);
+    z-index: 1002;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    transition: opacity 0.2s;
+    
+    &:hover {
+      opacity: 0.7;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .modal-container {
+    position: relative;
+    z-index: 10;
+    width: 825px;
+    margin: 0 auto;
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-title {
+    font-family: $font-el-messiri;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 56px;
+    color: white;
+    text-align: center;
+    margin: 0 0 25px 0;
+  }
+
+  .modal-text {
+    width: 100%;
+    color: white;
+    direction: rtl;
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+
+    .modal-text-intro {
+      font-family: $font-tajawal;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+      margin-bottom: 24px;
+
+      .highlight {
+        color: #d1a82c;
+      }
+    }
+
+    .modal-text-body {
+      font-family: $font-tajawal;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+      margin-bottom: 0;
+    }
+  }
+
+  .modal-logos {
+    display: flex;
+    gap: 24px;
+    margin-top: 15px;
+    justify-content: center;
+  }
+
+  .modal-copyright {
+    font-family: $font-tajawal;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #d1a82c;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .modal-logo-box {
+    width: 216px;
+    height: 104px;
+    background: white;
+    border-radius: 16.736px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      max-width: 85%;
+      max-height: 85%;
+      object-fit: contain;
+    }
+  }
+
+  .modal-storyme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+    margin-bottom: 5px;
+
+    .modal-storyme-text {
+      font-family: $font-tajawal;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 22px;
+      color: #e3d7c5;
+      text-align: center;
+      margin: 0;
+    }
+
+    .modal-logo-box {
+      width: 220px;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

@@ -13,15 +13,6 @@ const scene4Timeline = gsap.timeline({
 // Animate the content on scroll
 scene4Timeline
   .to(
-    ".scene4 .layer-content",
-    {
-      duration: 1,
-      opacity: 1,
-      ease: "power2.out",
-    },
-    0
-  )
-  .to(
     ".scene4 .layer-tree",
     {
       duration: 4,

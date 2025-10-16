@@ -5,10 +5,6 @@
 .scene2 {
   @include scene-base;
 
-  .layer-smoke {
-    z-index: $z-background;
-  }
-
   .layer-bg {
     z-index: $z-background;
     background-image: url("../assets/scenes/bg.png");
@@ -19,7 +15,7 @@
   }
 
   .layer-smoke {
-    @include parallax-layer($z-background, 0.2, 0, -100vh);
+    @include parallax-layer($z-background, 1, 0, 0);
     width: 120%;
     height: 100%;
     left: -20%;
@@ -27,15 +23,15 @@
 
   .layer-right-wall,
   .layer-gate {
-    @include parallax-layer($z-right-wall, 0.2, 35vw, 0);
+    @include parallax-layer($z-right-wall, 0.4, 20vw, 0);
   }
 
   .layer-left-wall {
-    @include parallax-layer($z-left-wall, 0.2, -55vw, 0);
+    @include parallax-layer($z-left-wall, 0.4, -25vw, 0);
   }
 
   .layer-sun {
-    @include parallax-layer($z-layers, 1, 0, -30vh);
+    @include parallax-layer($z-layers, 1, 0, -20vh);
   }
 
   .layer-truck {
@@ -45,16 +41,17 @@
   .layer-text {
     @include parallax-layer($z-right-wall, 0, 0, 15%);
     position: absolute;
-    right: 10%;
-    bottom: 25%;
+    right: 5%;
+    top: 60%;
+    transform: translateY(-50%);
 
     color: $primary-text;
     text-align: right;
-    font-family: "DG Forsha Scribble", "Waseem", "Baghdad", Arial, sans-serif;
-    font-size: 55px;
+    font-family: $font-el-messiri;
+    font-size: 85px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 80px;
+    font-weight: 700;
+    line-height: 104px;
   }
 
   .truck-1 {
@@ -94,74 +91,76 @@
 
 .scene2-1 {
   @include scene-base;
-
-  .layer-bg {
-    z-index: $z-background;
-    background-image: url("../assets/scenes/bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(1.6);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 
   .layer-text {
-    @include parallax-layer($z-layers, 0, 0, 50vh);
+    @include parallax-layer($z-layers, 0, 0, 10vh);
     direction: rtl;
-    font-family: "El Messiri";
-    font-size: 48px;
+    font-family: $font-el-messiri;
+    font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 62px;
+    line-height: 56px;
     color: $secondary-text;
+    text-align: center;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
     > div {
-      width: 60%;
+      width: 55%;
     }
 
     span {
-      color: $tertiary-text;
+      font-size: 56px;
+      line-height: 72px;
+      color: $primary-text;
+    }
+  }
+
+  .layer-video {
+    @include parallax-layer($z-layers, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(20%);
+    position: relative;
+    max-width: 80%;
+
+    .video-container {
+      position: relative;
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      video {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .video-frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        width: 115%;
+        height: 112%;
+        transform: translate(-51%, -52%);
+        pointer-events: none;
+      }
     }
   }
 }
 
 .scene2-2 {
   @include scene-base;
-
-  .layer-bg {
-    z-index: $z-background;
-    background-image: url("../assets/scenes/bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(1.6);
-  }
-
-  .layer-video {
-    @include parallax-layer($z-layers, 0, 0, 50vh);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    video {
-      width: 80%;
-      height: 80%;
-    }
-  }
-}
-
-.scene2-3 {
-  @include scene-base;
-
-  .layer-bg {
-    z-index: $z-background;
-    background-image: url("../assets/scenes/bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(1.6);
-  }
 
   .layer-text {
     @include parallax-layer($z-layers, 1, 0, 0);
@@ -174,6 +173,7 @@
 
     .text-1,
     .text-2 {
+      direction: rtl;
       text-align: justify;
       font-family: Tajawal;
       font-size: 24px;
@@ -195,33 +195,47 @@
       opacity: 0;
     }
 
-    .video-frame {
-      width: 60%;
+    .layer-video {
+      max-width: 50%;
       transform: translateY(20%);
       opacity: 0;
-      video {
+
+      .video-container {
+        margin-top: 20px;
+        position: relative;
         width: 100%;
-        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        video {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          z-index: 1;
+        }
+
+        .video-frame {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: 2;
+          width: 115%;
+          height: 112%;
+          transform: translate(-51%, -52%);
+          pointer-events: none;
+        }
       }
     }
   }
 }
 
-.scene2-4 {
+.scene2-3 {
   @include scene-base;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  .layer-bg {
-    z-index: $z-background;
-    background-image: url("../assets/scenes/bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(1.6);
-  }
 
   .layer-text {
     @include parallax-layer($z-layers, 0, 0, -100vh);
@@ -261,13 +275,207 @@
     @include parallax-layer($z-layers, 0, 0, 100vh);
     direction: rtl;
     position: absolute;
-    bottom: 20%;
-    color: #fff;
+    bottom: 10%;
+    color: $primary-text;
     text-align: center;
-    font-family: "El Messiri";
-    font-size: 40px;
+    font-family: $font-el-messiri;
+    font-size: 85px;
     font-style: normal;
     font-weight: 700;
-    line-height: 52px;
+    line-height: 104px;
+  }
+}
+
+.scene2-4 {
+  @include scene-base;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .layer-bg {
+    @include parallax-layer($z-layers, 0.1, 0, 0);
+    background-image: url("../assets/images/latsheh.png");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+  }
+
+  .gallery-container {
+    @include parallax-layer($z-layers, 1, 0, 0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 40px;
+    width: 70%;
+  }
+
+  .gallery-item {
+    position: relative;
+    height: 60vh;
+    width: 10%;
+    border-radius: 80px;
+    border: 1px solid $primary-text;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    padding: 0;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 102%;
+      height: 103%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: inherit;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(57, 39, 22, 0.5);
+      border-radius: inherit;
+      opacity: 1;
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 2;
+    }
+
+    &-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: $primary-text;
+      border-radius: 32px;
+      padding: 4px 4px 4px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 64px;
+      height: 64px;
+      box-sizing: border-box;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 3;
+    }
+
+    &-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+      svg {
+        width: 32px;
+        height: 32px;
+        color: $primary-text;
+        transition: color 0.3s ease;
+      }
+    }
+
+    &[data-category="yellow"] .gallery-item-icon {
+      background: $tertiary-text;
+    }
+
+    &[data-category="olive"] .gallery-item-icon {
+      background: #6b6a1e;
+    }
+
+    &[data-category="red"] .gallery-item-icon {
+      background: #8c2b1a;
+    }
+
+    &-caption {
+      position: absolute;
+      bottom: 16px;
+      right: 3px;
+      background: $primary-text;
+      border-radius: 32px;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      width: 60px;
+      height: 60px;
+      overflow: hidden;
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 3;
+    }
+
+    &-caption-text {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      color: #2b1b09;
+      direction: rtl;
+    }
+
+    &-title {
+      font-family: $font-tajawal;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 22px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    &-subtitle {
+      font-family: $font-tajawal;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    &-expanded {
+      width: 100%;
+      height: 60vh;
+      border-radius: 40px;
+
+      .gallery-item-overlay {
+        opacity: 0;
+      }
+
+      .gallery-item-badge {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .gallery-item-caption {
+        width: auto;
+        height: auto;
+      }
+
+      .gallery-item-caption-text {
+        display: flex;
+      }
+    }
   }
 }

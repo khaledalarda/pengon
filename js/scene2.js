@@ -1,7 +1,5 @@
-// Scene2-specific animations and parallax effects
 const scene2 = document.querySelector(".scene2");
 
-// Create a timeline for the entire scene animation
 const scene2Timeline = gsap.timeline({
   scrollTrigger: {
     trigger: scene2,
@@ -10,7 +8,6 @@ const scene2Timeline = gsap.timeline({
   },
 });
 
-// All layers start together but with different speeds
 scene2Timeline
   .to(
     [".scene2 .layer-right-wall", ".scene2 .layer-gate"],
@@ -40,23 +37,12 @@ scene2Timeline
       ease: "none",
     },
     0
-  )
-  .to(
-    ".scene2 .layer-smoke",
-    {
-      transform: "translate(0, 0)",
-      duration: 1,
-      opacity: 1,
-      ease: "power2.out",
-    },
-    ">+=1.5"
   );
 
 gsap.to(".scene2 .layer-smoke", {
   x: "10%",
-  duration: 4,
-  ease: "power2.out",
-  yoyo: true,
+  duration: 8,
+  ease: "linear",
   repeat: -1,
   delay: 1.5,
 });
@@ -170,7 +156,6 @@ scene2Timeline
 
 const scene2_1 = document.querySelector(".scene2-1");
 
-// Create a timeline for the entire scene animation
 const scene2_1Timeline = gsap.timeline({
   scrollTrigger: {
     trigger: scene2_1,
@@ -179,20 +164,30 @@ const scene2_1Timeline = gsap.timeline({
   },
 });
 
-scene2_1Timeline.to(
-  ".scene2-1 .layer-text",
-  {
-    duration: 2,
-    opacity: 1,
-    transform: "translateY(0)",
-    ease: "power2.out",
-  },
-  0
-);
+scene2_1Timeline
+  .to(
+    ".scene2-1 .layer-text",
+    {
+      duration: 2,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene2-1 .layer-video",
+    {
+      duration: 2,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  );
 
 const scene2_2 = document.querySelector(".scene2-2");
 
-// Create a timeline for the entire scene animation
 const scene2_2Timeline = gsap.timeline({
   scrollTrigger: {
     trigger: scene2_2,
@@ -201,31 +196,9 @@ const scene2_2Timeline = gsap.timeline({
   },
 });
 
-scene2_2Timeline.to(
-  ".scene2-2 .layer-video",
-  {
-    duration: 2,
-    opacity: 1,
-    transform: "translateY(0)",
-    ease: "power2.out",
-  },
-  0
-);
-
-const scene2_3 = document.querySelector(".scene2-3");
-
-// Create a timeline for the entire scene animation
-const scene2_3Timeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: scene2_3,
-    scrub: 0.3,
-    pin: true,
-  },
-});
-
-scene2_3Timeline
+scene2_2Timeline
   .to(
-    ".scene2-3 .text-1",
+    ".scene2-2 .text-1",
     {
       duration: 2,
       opacity: 1,
@@ -235,29 +208,61 @@ scene2_3Timeline
     0
   )
   .to(
-    ".scene2-3 .text-2",
+    ".scene2-2 .text-2",
     {
       duration: 2,
       opacity: 1,
       transform: "translateY(0)",
       ease: "power2.out",
     },
-    ">"
+    "<+=1"
   )
   .to(
-    ".scene2-3 .video-frame",
+    ".scene2-2 .layer-video",
     {
       duration: 2,
       opacity: 1,
       transform: "translateY(0)",
       ease: "power2.out",
     },
-    ">"
+    "<+=1"
+  );
+
+const scene2_3 = document.querySelector(".scene2-3");
+
+const scene2_3Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: scene2_3,
+    pin: true,
+    onEnter: () => scene2_3Timeline.play(),
+  },
+  paused: true,
+});
+
+scene2_3Timeline
+  .to(
+    ".scene2-3 .layer-text",
+    {
+      transform: "translateY(-12%)",
+      duration: 1,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene2-3 .layer-text-2",
+    {
+      duration: 1,
+      transform: "translateY(0)",
+      opacity: 1,
+      ease: "power2.out",
+    },
+    0
   );
 
 const scene2_4 = document.querySelector(".scene2-4");
 
-// Create a timeline for the entire scene animation
 const scene2_4Timeline = gsap.timeline({
   scrollTrigger: {
     trigger: scene2_4,
@@ -266,24 +271,30 @@ const scene2_4Timeline = gsap.timeline({
   },
 });
 
-scene2_4Timeline
-  .to(
-    ".scene2-4 .layer-text",
-    {
-      transform: "translateY(0)",
-      duration: 2,
-      opacity: 1,
-      ease: "power2.out",
-    },
-    0
-  )
-  .to(
-    ".scene2-4 .layer-text-2",
-    {
-      duration: 2,
-      transform: "translateY(0)",
-      opacity: 1,
-      ease: "power2.out",
-    },
-    0
-  );
+scene2_4Timeline.to(
+  ".scene2-4 .layer-text",
+  {
+    duration: 2,
+    opacity: 1,
+    ease: "power2.out",
+  },
+  0
+);
+
+const galleryItems = document.querySelectorAll(".scene2-4 .gallery-item");
+
+galleryItems.forEach((item) => {
+  item.addEventListener("click", function () {
+    const currentExpanded = document.querySelector(
+      ".scene2-4 .gallery-item-expanded"
+    );
+
+    if (currentExpanded && currentExpanded !== this) {
+      currentExpanded.classList.remove("gallery-item-expanded");
+    }
+
+    if (!this.classList.contains("gallery-item-expanded")) {
+      this.classList.add("gallery-item-expanded");
+    }
+  });
+});

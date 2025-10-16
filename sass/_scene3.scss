@@ -12,22 +12,18 @@
   }
 
   .layer-land {
-    @include parallax-layer($z-layers, 0, 0, 20vh);
-    top: 60%;
-    img {
-      height: 40%;
-    }
+    @include parallax-layer($z-layers, 1, 0, 0);
   }
 
   .layer-smoke {
-    @include parallax-layer($z-layers, 0, 0, -50vh);
+    @include parallax-layer($z-layers, 1, 0, 0);
     width: 140%;
     height: 100%;
     left: -40%;
   }
 
   .layer-truck {
-    @include parallax-layer($z-layers, 1, -130%, 0);
+    @include parallax-layer($z-layers, 1, -80%, 0);
     scale: 0.9;
     .layer-truck-container {
       width: 100%;
@@ -60,27 +56,35 @@
     .layer-text-container-item {
       opacity: 0;
       color: #fff;
+
       text-align: right;
-      font-family: "DG Forsha Scribble";
-      font-size: 28px;
+      font-family: "El Messiri";
+      font-size: 24px;
       font-style: normal;
-      font-weight: 400;
-      line-height: 38px;
+      font-weight: 700;
+      line-height: 56px;
 
       .item-secondary {
         color: $secondary-text;
         text-align: right;
-        font-family: "DG Forsha Scribble";
-        font-size: 55px;
+        font-family: "El Messiri";
+        font-size: 48px;
         font-style: normal;
-        font-weight: 400;
-        line-height: 80px;
+        font-weight: 700;
+        line-height: 72px;
       }
     }
   }
 
   .layer-text-bottom {
     @include parallax-layer($z-layers, 0, 0, 0);
+    color: $primary-text;
+    text-align: right;
+    font-family: $font-tajawal;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
 
     > div {
       width: 100%;
@@ -94,16 +98,6 @@
 .scene3-1 {
   @include scene-base;
 
-  // Parallax layer initial states
-  .layer-bg {
-    z-index: $z-background;
-    background-image: url("../assets/scenes/bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(1.6);
-  }
-
   .layer-text {
     @include parallax-layer($z-layers, 1, 0, 0);
     display: flex;
@@ -111,24 +105,47 @@
     justify-content: center;
 
     .container {
-      margin-top: 8%;
+      margin-top: 10%;
       width: 60%;
       height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 30px;
 
       color: $secondary-text;
       font-family: "El Messiri";
-      font-size: 48px;
+      font-size: 32px;
       font-style: normal;
       font-weight: 700;
-      line-height: 62px;
+      line-height: 56px;
 
       .text-1,
+      .text-2,
       .chart {
         opacity: 0;
         transform: translateY(20%);
+      }
+
+      .text-2 {
+        color: $tertiary-text;
+        text-align: right;
+        font-family: $font-tajawal;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+
+        span {
+          padding-top: 10px;
+        }
+        img {
+          width: 25px;
+          height: 15px;
+        }
       }
 
       .chart {
@@ -150,25 +167,53 @@
 .scene3-2 {
   @include scene-base;
 
-  // Parallax layer initial states
-  .layer-bg {
-    z-index: $z-background;
-    background-image: url("../assets/scenes/bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(1.6);
-  }
-
-  .layer-video {
-    @include parallax-layer($z-layers, 0, 0, 10vh);
+  .layer-content {
+    @include parallax-layer($z-layers, 1, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
 
-    video {
-      width: 60%;
-      height: 60%;
+    .content-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 80px;
+      width: 85%;
+      opacity: 0.5;
+      transform: translateY(50px);
+
+      .chart-container {
+        flex: 0 0 auto;
+        opacity: 0.5;
+        transform: translateY(50px);
+
+        img {
+          width: 400px;
+          height: auto;
+        }
+      }
+
+      .text-container {
+        flex: 1;
+        opacity: 0.5;
+        transform: translateY(50px);
+        max-width: 40%;
+
+        p {
+          color: $primary-text;
+          text-align: right;
+          font-family: $font-el-messiri;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 56px;
+          direction: rtl;
+
+          span {
+            color: $tertiary-text;
+          }
+        }
+      }
     }
   }
 }
@@ -176,15 +221,54 @@
 .scene3-3 {
   @include scene-base;
 
-  // Parallax layer initial states
   .layer-bg {
-    z-index: $z-background;
-    background-image: url("../assets/scenes/bg.png");
+    @include parallax-layer($z-layers, 0.1, 0, 0);
+    background-image: url("../assets/images/latsheh.png");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(1.6);
   }
+
+  .layer-video {
+    @include parallax-layer($z-layers, 0.6, 0, 10vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .video-container {
+      margin-top: 20px;
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      video {
+        width: 70%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+      }
+
+      .video-frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        width: 85%;
+        height: 112%;
+        transform: translate(-51%, -52%);
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.scene3-4 {
+  @include scene-base;
 
   .layer-text {
     @include parallax-layer($z-layers, 0, 0, 10vh);
