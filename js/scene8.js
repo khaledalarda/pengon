@@ -163,4 +163,4 @@ scene8Timeline
     "<"
   );
 
-// MotionPathHelper.create(".scene8 .layer-tooth-1-container");
+// MotionPathHelper.create(".scene8 .layer-tooth-4-container");

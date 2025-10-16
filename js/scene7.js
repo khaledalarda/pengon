@@ -80,4 +80,14 @@ scene7Timeline
       ease: "sine.inOut",
     },
     ">"
+  )
+  .to(
+    ".scene7 .layer-text",
+    {
+      duration: 3,
+      transform: "translateX(0) translateY(0)",
+      opacity: 1,
+      ease: "power2.out",
+    },
+    ">"
   );

@@ -11,14 +11,14 @@
   }
 
   .layer-smoke {
-    @include parallax-layer($z-layers, 0, 0, -50vh);
+    @include parallax-layer($z-layers, 0.6, 0, -10vh);
     width: 140%;
     height: 100%;
     left: -40%;
   }
 
   .layer-ground {
-    @include parallax-layer($z-layers, 0, 0, 50vh);
+    @include parallax-layer($z-layers, 0.6, 0, 10vh);
   }
 
   .layer-squeezer {

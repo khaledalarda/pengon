@@ -11,14 +11,14 @@
   }
 
   .layer-smoke {
-    @include parallax-layer($z-layers, 0, 0, -50vh);
+    @include parallax-layer($z-layers, 0.6, 0, -10vh);
     width: 140%;
     height: 100%;
     left: -40%;
   }
 
   .layer-ground {
-    @include parallax-layer($z-layers, 0, 0, 50vh);
+    @include parallax-layer($z-layers, 0.6, 0, 10vh);
   }
 
   .layer-glass-box {
@@ -29,5 +29,23 @@
     z-index: $z-layers;
     scale: 0.5;
     width: 60%;
+  }
+
+  .layer-text {
+    @include parallax-layer($z-layers, 0, 0, 3vh);
+    text-align: right;
+    opacity: 0;
+
+    color: $primary-text;
+    font-family: "El Messiri";
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 62px;
+
+    > div {
+      margin-top: 10%;
+      margin-right: 6%;
+    }
   }
 }
