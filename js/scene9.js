@@ -47,7 +47,7 @@ scene9Timeline.to(
   {
     duration: 1,
     opacity: 1,
-    scale: 1,
+    transform: "translateX(0) translateY(0) scale(1)",
     ease: "power2.out",
   },
   ">"

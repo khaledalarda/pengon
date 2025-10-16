@@ -1,13 +1,16 @@
-// Scene8-specific animations and effects
 const scene8 = document.querySelector(".scene8");
 
-// Create a timeline for the entire scene animation
 const scene8Timeline = gsap.timeline({
   scrollTrigger: {
     trigger: scene8,
     scrub: 0.3,
     pin: true,
   },
+});
+
+const audioPlayers8 = document.querySelectorAll('.scene8 .audio-player');
+audioPlayers8.forEach((player) => {
+  initAudioPlayer(player);
 });
 
 // Animate the layers on scroll
@@ -161,6 +164,14 @@ scene8Timeline
       },
     },
     "<"
+  )
+  .to(
+    ".scene8 .audio-container",
+    {
+      duration: 2,
+      opacity: 1,
+      stagger: 0.2,
+      ease: "power2.out",
+    },
+    ">"
   );
-
-// MotionPathHelper.create(".scene8 .layer-tooth-4-container");

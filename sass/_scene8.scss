@@ -103,4 +103,102 @@
     z-index: 100;
     pointer-events: auto;
   }
+
+  .audio-container {
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+    width: fit-content;
+    height: 88px;
+
+    .audio-player {
+      height: 100%;
+      width: 100%;
+
+      &__name {
+        color: $burnt-orange;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 22px;
+      }
+
+      &__title {
+        color: $mud-brown;
+        font-size: 16px;
+        line-height: 19px;
+      }
+
+      &__avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: white;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &__btn {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        border-radius: 50%;
+        margin: 0 12px;
+      }
+
+      &__controls {
+        width: auto;
+        min-width: 200px;
+      }
+
+      &__time {
+        color: $mud-brown;
+        font-size: 16px;
+        line-height: 19px;
+      }
+
+      &__progress {
+        width: 128px;
+      }
+    }
+  }
+
+  .audio-container-1 {
+    left: 51%;
+    top: 30.5%;
+  }
+
+  .audio-container-2 {
+    left: 57.8%;
+    top: 19.4%;
+  }
+
+  .audio-container-3 {
+    left: 21.7%;
+    top: 19.4%;
+  }
+
+  .audio-container-4 {
+    left: 58.2%;
+    top: 52.7%;
+  }
+
+  .audio-container-5 {
+    left: 64.8%;
+    top: 63.8%;
+  }
+
+  .audio-container-6 {
+    left: 64.9%;
+    top: 41.6%;
+  }
+
+  .audio-container-7 {
+    left: 43.9%;
+    top: 8.2%;
+  }
 }
