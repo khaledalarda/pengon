@@ -37,6 +37,7 @@ gsap.to(".scene8 .layer-smoke", {
   x: "10%",
   duration: 8,
   ease: "linear",
+  repeatDelay: 1,
   repeat: -1,
   delay: 1.5,
 });

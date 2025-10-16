@@ -85,3 +85,539 @@
     }
   }
 }
+
+.scene5-1 {
+  @include scene-base;
+  position: relative;
+  overflow: hidden;
+
+  .content-wrapper {
+    position: relative;
+    z-index: $z-layers;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 16.667%;
+    box-sizing: border-box;
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .main-heading {
+    padding-top: 30px;
+    font-family: $font-el-messiri;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 56px;
+    color: $secondary-text;
+    text-align: right;
+    direction: rtl;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10%);
+  }
+
+  .highlight-text {
+    font-family: $font-el-messiri;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 56px;
+    color: $primary-text;
+    text-align: right;
+    direction: rtl;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10%);
+
+    .highlight-yellow {
+      color: $tertiary-text;
+    }
+  }
+
+  .body-text {
+    font-family: $font-tajawal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $primary-text;
+    text-align: justify;
+    direction: rtl;
+    opacity: 0;
+    transform: translateY(10%);
+
+    .highlight-yellow-large {
+      font-family: $font-el-messiri;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 56px;
+      color: $tertiary-text;
+    }
+  }
+
+  .quote-text {
+    font-family: $font-tajawal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: $primary-text;
+    text-align: right;
+    direction: rtl;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10%);
+  }
+
+  .eye-badge {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    z-index: $z-layers;
+    position: absolute;
+    bottom: 10%;
+    opacity: 0;
+    transform: translateY(10%);
+  }
+
+  .audio-player {
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(10%);
+  }
+
+  .eye-icon {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 29.707px;
+      height: 18px;
+    }
+  }
+
+  .eye-text {
+    font-family: $font-tajawal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: $tertiary-text;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0;
+    direction: rtl;
+  }
+}
+
+.scene5-2 {
+  @include scene-base;
+  position: relative;
+  overflow: hidden;
+
+  .layer-bg {
+    z-index: $z-background;
+    background-image: url("../assets/scenes/scene5/scene5-1-bg.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .content-wrapper {
+    position: relative;
+    z-index: $z-layers;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    box-sizing: border-box;
+  }
+
+  .video-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .video-container {
+    position: relative;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transform: translateY(10%);
+
+    video {
+      width: 100%;
+      height: 100%;
+      max-height: 500px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      width: 115%;
+      height: 112%;
+      transform: translate(-51%, -52%);
+      pointer-events: none;
+    }
+  }
+
+  .text-content {
+    opacity: 0.5;
+    transform: translateY(10%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 54.48%;
+    max-width: 1046px;
+  }
+
+  .description-text {
+    font-family: $font-tajawal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $primary-text;
+    text-align: justify;
+    direction: rtl;
+    margin: 0;
+  }
+
+  .eye-badge {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    align-self: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  .eye-icon {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    img {
+      width: 29.707px;
+      height: 18px;
+    }
+  }
+
+  .eye-text {
+    font-family: $font-tajawal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: $tertiary-text;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0;
+    direction: rtl;
+  }
+}
+
+.scene5-3 {
+  @include scene-base;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .layer-bg {
+    @include parallax-layer($z-layers, 0.1, 0, 0);
+    background-image: url("../assets/images/latsheh.png");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+  }
+
+  .gallery-container {
+    @include parallax-layer($z-layers, 1, 0, 0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 40px;
+    width: 70%;
+  }
+
+  .gallery-item {
+    position: relative;
+    height: 60vh;
+    width: 10%;
+    border-radius: 80px;
+    border: 1px solid $primary-text;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    padding: 0;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 102%;
+      height: 103%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: inherit;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(57, 39, 22, 0.5);
+      border-radius: inherit;
+      opacity: 1;
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 2;
+    }
+
+    &-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: $primary-text;
+      border-radius: 32px;
+      padding: 4px 4px 4px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 64px;
+      height: 64px;
+      box-sizing: border-box;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 3;
+    }
+
+    &-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+      svg {
+        width: 32px;
+        height: 32px;
+        color: $primary-text;
+        transition: color 0.3s ease;
+      }
+    }
+
+    &[data-category="yellow"] .gallery-item-icon {
+      background: $tertiary-text;
+    }
+
+    &[data-category="olive"] .gallery-item-icon {
+      background: #6b6a1e;
+    }
+
+    &[data-category="red"] .gallery-item-icon {
+      background: #8c2b1a;
+    }
+
+    &-caption {
+      position: absolute;
+      bottom: 16px;
+      right: 3px;
+      background: $primary-text;
+      border-radius: 32px;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      width: 60px;
+      height: 60px;
+      overflow: hidden;
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 3;
+    }
+
+    &-caption-text {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      color: #2b1b09;
+      direction: rtl;
+    }
+
+    &-title {
+      font-family: $font-tajawal;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 22px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    &-subtitle {
+      font-family: $font-tajawal;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    &-expanded {
+      width: 100%;
+      height: 60vh;
+      border-radius: 40px;
+
+      .gallery-item-overlay {
+        opacity: 0;
+      }
+
+      .gallery-item-badge {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .gallery-item-caption {
+        width: auto;
+        height: auto;
+      }
+
+      .gallery-item-caption-text {
+        display: flex;
+      }
+    }
+  }
+}
+
+
+.scene5-4 {
+  @include scene-base;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  .layer-text {
+    @include parallax-layer($z-layers, 0, 0, 10vh);
+    direction: rtl;
+    color: $primary-text;
+    font-family: "El Messiri";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 62px;
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+  }
+}
+
+.scene5-5 {
+  @include scene-base;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  .layer-text {
+    @include parallax-layer($z-layers, 0, 0, 10vh);
+    direction: rtl;
+    color: $primary-text;
+    font-family: "El Messiri";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 62px;
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+  }
+}
+
+.scene5-6 {
+  @include scene-base;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  .layer-text {
+    @include parallax-layer($z-layers, 0, 0, 10vh);
+    direction: rtl;
+    color: $primary-text;
+    font-family: "El Messiri";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 62px;
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+  }
+}
+
+.scene5-7 {
+  @include scene-base;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  .layer-text {
+    @include parallax-layer($z-layers, 0, 0, 10vh);
+    direction: rtl;
+    color: $primary-text;
+    font-family: "El Messiri";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 62px;
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+  }
+}

@@ -164,15 +164,34 @@ const scene4_2Timeline = gsap.timeline({
   },
 });
 
-scene4_2Timeline.to(
-  ".scene4-2 .layer-text",
-  {
-    duration: 2,
-    opacity: 1,
-    ease: "power2.out",
-  },
-  0
-);
+scene4_2Timeline
+  .to(
+    ".scene4-2 .audio-stairs-item--1",
+    {
+      duration: 2,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene4-2 .audio-stairs-item--2",
+    {
+      duration: 2,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene4-2 .audio-stairs-item--3",
+    {
+      duration: 2,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    ">"
+  );
 
 const scene4_3 = document.querySelector(".scene4-3");
 
@@ -184,15 +203,47 @@ const scene4_3Timeline = gsap.timeline({
   },
 });
 
-scene4_3Timeline.to(
-  ".scene4-3 .layer-text",
-  {
-    duration: 2,
-    opacity: 1,
-    ease: "power2.out",
-  },
-  0
-);
+scene4_3Timeline
+  .to(
+    ".scene4-3 .stat-box--top-right",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene4-3 .stat-box--top-left",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene4-3 .stat-box--bottom-right",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene4-3 .stat-box--bottom-left",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "power2.out",
+    },
+    ">"
+  );
 
 const scene4_4 = document.querySelector(".scene4-4");
 
@@ -204,12 +255,41 @@ const scene4_4Timeline = gsap.timeline({
   },
 });
 
-scene4_4Timeline.to(
-  ".scene4-4 .layer-text",
-  {
-    duration: 2,
-    opacity: 1,
-    ease: "power2.out",
-  },
-  0
-);
+scene4_4Timeline
+  .to(
+    ".scene4-4 .title",
+    {
+      duration: 1,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    0
+  )
+  .to(
+    ".scene4-4 .infographic-container",
+    {
+      duration: 1,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    "<+=0.5"
+  )
+  .to(
+    ".scene4-4 .infographic-container",
+    {
+      duration: 1,
+      opacity: 1,
+      transform: "translateX(0)",
+      ease: "power2.out",
+    },
+    ">"
+  )
+  .to(
+    ".scene4-4 .text-container",
+    {
+      duration: 1,
+      opacity: 1,
+      ease: "power2.out",
+    },
+    "<"
+  );
