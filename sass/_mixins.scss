@@ -11,11 +11,12 @@
   $z-index,
   $opacity: 0,
   $translateX: 0,
-  $translateY: 50vh
+  $translateY: 50vh,
+  $rotate: 0deg
 ) {
   z-index: $z-index;
   opacity: $opacity;
-  transform: translateX($translateX) translateY($translateY);
+  transform: translateX($translateX) translateY($translateY) rotate($rotate);
 }
 
 @mixin scene-base {

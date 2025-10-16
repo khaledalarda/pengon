@@ -1,0 +1,125 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.scene10 {
+  @include scene-base;
+
+  .layer-bg {
+    z-index: $z-background;
+  }
+
+  .layer-all {
+    @include parallax-layer(11, 0.5, 0, 10vh, -10.165deg);
+    z-index: $z-layers;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -7%;
+    top: 9%;
+    scale: 1.5;
+
+    .layer-bank {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .layer-flower-1 {
+      position: absolute;
+      top: 58%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        transform: translate(0, 0) scale(0.6);
+      }
+    }
+
+    .layer-flower-2 {
+      position: absolute;
+      top: 59.5%;
+      left: -3%;
+      width: 100%;
+      height: 100%;
+
+      img {
+        transform: translate(0, 0) scale(0.6);
+      }
+    }
+
+    .layer-flower-3 {
+      position: absolute;
+      top: 54%;
+      left: 2%;
+      width: 100%;
+      height: 100%;
+
+      img {
+        transform: translate(0, 0) scale(0.6);
+      }
+    }
+
+    .layer-flower-4 {
+      position: absolute;
+      top: 67%;
+      left: -6%;
+      width: 100%;
+      height: 100%;
+
+      img {
+        transform: translate(0, 0) scale(0.6);
+      }
+    }
+
+    .layer-flower-5 {
+      position: absolute;
+      top: 52%;
+      left: -1%;
+      width: 100%;
+      height: 100%;
+
+      img {
+        transform: translate(0, 0) scale(0.6);
+      }
+    }
+
+    .layer-flower-6 {
+      position: absolute;
+      top: 47%;
+      left: -3%;
+      width: 100%;
+      height: 100%;
+
+      img {
+        transform: translate(0, 0) scale(0.6);
+      }
+    }
+  }
+
+  .layer-text {
+    @include parallax-layer($z-layers, 0, 0, 10vh);
+
+    div {
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      direction: rtl;
+      font-family: "El Messiri";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 56px;
+      max-width: 500px;
+
+      span {
+        color: $tertiary-text;
+      }
+    }
+  }
+}

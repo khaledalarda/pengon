@@ -282,9 +282,9 @@ scene2_4Timeline.to(
   0
 );
 
-const galleryItems = document.querySelectorAll(".scene2-4 .gallery-item");
+const scene2GalleryItems = document.querySelectorAll(".scene2-4 .gallery-item");
 
-galleryItems.forEach((item) => {
+scene2GalleryItems.forEach((item) => {
   item.addEventListener("click", function () {
     const currentExpanded = document.querySelector(
       ".scene2-4 .gallery-item-expanded"
